@@ -3,18 +3,24 @@
 ## UX - User Experience
 ### User Stories
 Site user:
+- Create account where they can see previous purchases.
 - See products available. Including status and options.
 - Add products to cart.
 - Search for products.
-- Navigate categories.
+- Navigate categories and get relevant results.
 - Pay for products.
 
 Admin user:
-- Add products.
-- See orders.
+- Add/edit/remove products.
+- See and cancel orders.
 - Change stock numbers.
 
 ### Colour
+I chose to make this e-store in blue and green shades. These colours were chosen due to it being a bit different than the online book-stores where i live (sweden), and due to blue being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, chich mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolices security and trust, and green symbolices harmony and safety. All the colour choices was checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
+
+![colour-palette](misc/book-store-palette.png)
+![colour-checker-blue-green](misc/colour-check-blue-green.PNG)
+![colour-checker-light-green](misc/colour-check-light-green.PNG)
 
 ### Structure and typography 
 
