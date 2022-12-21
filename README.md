@@ -75,5 +75,6 @@ This project was deployed with Heroku.
 ### Code
 
 ### Content and Media
+All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page.
 
 Erik Vodopivec Forsman, 2022
