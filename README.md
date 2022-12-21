@@ -73,6 +73,9 @@ This project was deployed with Heroku.
 
 ## Credits
 ### Code
+A lot of the backend code is based on the [boutique ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from the Code Institute fullstack developer course.
+
+For the frontend I used the [Shop item template](https://startbootstrap.com/template/shop-item), and the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). The first one is used for the specific items, and the second one is for the shop page.
 
 ### Content and Media
 All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page.
