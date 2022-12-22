@@ -3,6 +3,7 @@
 ## UX - User Experience
 ### User Stories
 Site user:
+- Easily use and understand the website.
 - Create account where they can see previous purchases.
 - See products available. Including status and options.
 - Add products to cart.
@@ -27,6 +28,9 @@ I chose to make this e-store in blue and green shades. These colours were chosen
 #### Structure
 
 #### Typography
+I chose to use the font Pacifico for the store name and page titles. For everything else I used the font . Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
+
+the reason I chose these fonts were that they fitted the colour palette. 
 
 ## Features
 
