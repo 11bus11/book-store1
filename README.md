@@ -28,13 +28,22 @@ I chose to make this e-store in blue and green shades. These colours were chosen
 #### Structure
 
 #### Typography
-I chose to use the font Pacifico for the store name and page titles. For everything else I used the font . Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
+I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Titillium Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
 
-the reason I chose these fonts were that they fitted the colour palette. 
+The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Titillium Web" is inconspicous while also telling the user that effort was put into the website.
 
 ## Features
+### Shop
+
+### Bag
+
+### Checkout
+
+### Admin
 
 ### Potential Features
+- If I had the time I would expand on the categories and sorting options.
+- I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
 
 ## Testing
 
