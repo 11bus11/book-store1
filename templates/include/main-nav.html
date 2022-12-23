@@ -1,0 +1,32 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-md-none">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="articles-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Articles
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-articles-link">
+                <a href="{% url 'articles' %}?category=top3lists" class="dropdown-item">Top 3 lists</a>
+                <a href="{% url 'articles' %}?category=reviews" class="dropdown-item ">Reviews</a>
+                <a href="{% url 'articles' %}?sort=date&direction=desc" class="dropdown-item">All Articles</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="book-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clothing
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="books-link">
+                <a href="{% url 'products' %}?category=fantasy" class="dropdown-item">Fantasy</a>
+                <a href="{% url 'products' %}?category=romace" class="dropdown-item">Romance</a>
+                <a href="{% url 'products' %}?category=nature" class="dropdown-item">Nature</a>
+                <a href="{% url 'products' %}?category=religion" class="dropdown-item">Religion</a>
+                <a href="{% url 'products' %}?category=history" class="dropdown-item">History</a>
+                <a href="{% url 'products' %}?category=fantasy, romance, nature, religion, history" class="dropdown-item">All Books</a>
+            </div>
+        </li>
+    </ul>
