@@ -20,7 +20,7 @@ Admin user:
 I chose to make this e-store in blue and green shades. These colours were chosen due to it being a bit different than the online book-stores where i live (sweden), and due to blue being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, chich mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolices security and trust, and green symbolices harmony and safety. All the colour choices was checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
 
 ![colour-palette](misc/book-store-palette.png)
-![colour-checker-blue-green](misc/colour-check-blue-green.PNG)
+![colour-checker-blue-green](misc/colour-check-dark-green.PNG)
 ![colour-checker-light-green](misc/colour-check-light-green.PNG)
 
 ### Structure and typography 
@@ -33,10 +33,15 @@ The base of the website is a simple navigation-bar with dropdown menues for prod
 #### Typography
 I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Titillium Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
 
-The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Titillium Web" is inconspicous while also telling the user that effort was put into the website.
+The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
 ## Features
 ### Shop
+The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. 
+
+There is also a search bar where users can find products based on key words.
+
+[Shop image](misc/shop-image.PNG)
 
 ### Bag
 
@@ -48,7 +53,7 @@ The reason I chose these fonts were that they worked well with the colour palett
 The admin can add, edit and remove products thru the admin page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories. The same goes for the articles.
 
 ### Potential Features
-- If I had the time I would expand on the categories and sorting options.
+- If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
 
 ## Testing
@@ -89,6 +94,9 @@ This project was deployed with Heroku.
     - Connect your account and choose a repository to deploy from.
     - Choose either Automatic or Manual deployment (recommended).
 - Make sure the live site is working.
+
+The database is on ElephantSQL.
+- Create an account on ElephantSQL.
 
 ## Credits
 ### Code
