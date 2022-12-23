@@ -69,11 +69,11 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="py-5 page-header">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder header-text">{% block extra_header %}{% endblock %}</h1>
+                    <p class="lead fw-normal text-white mb-0">{% block extra_subheader %}{% endblock %}</p>
                 </div>
             </div>
         </header>

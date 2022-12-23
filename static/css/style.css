@@ -1,5 +1,5 @@
 :root {
-    --blue-green: #06dbdb;
+    --dark-green: #056161;
     --light-green: #02c3bd;
     
     --rubik-font: 'Rubik Bubbles', cursive;
@@ -12,10 +12,15 @@ nav {
     background-color: var(--light-green);
 }
 
-.navbar-brand {
+.navbar-brand, .header-text {
     font-family: var(--rubik-font);
 }
 
 .choices-nav {
     font-family: var(--istok-web-font);
 }
+
+.page-header {
+    background-color: var(--dark-green);
+}
+
