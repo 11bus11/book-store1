@@ -26,6 +26,9 @@ I chose to make this e-store in blue and green shades. These colours were chosen
 ### Structure and typography 
 
 #### Structure
+I chose to create a simple structure, since the products are the thing that should attract attention. All products have a green background in the photos. This is so that they fit into the colour-palette while also attracting attention. Right below the navigation bar there is a darker field telling the user the name of the page. 
+
+The base of the website is a simple navigation-bar with dropdown menues for products and accounts. These menues are in a main dropdown-menue on the mobile version. I chose to place the search bar at the top of the dropdown menue for the products. In the mobile version it is at the top of the main dropdown menue. 
 
 #### Typography
 I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Titillium Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
@@ -39,7 +42,10 @@ The reason I chose these fonts were that they worked well with the colour palett
 
 ### Checkout
 
+### Messages
+
 ### Admin
+The admin can add, edit and remove products thru the admin page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories. The same goes for the articles.
 
 ### Potential Features
 - If I had the time I would expand on the categories and sorting options.
