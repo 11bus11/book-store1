@@ -1,4 +1,5 @@
 # E-shop - Book store
+This is a store i created for my 5th project in the Code Institute Software Development Course. It is a simple book store with a small selection of books. It is called Dino's book store, after my cat. 
 
 ## UX - User Experience
 ### User Stories
@@ -59,6 +60,20 @@ The admin can add, edit and remove products thru the admin page. They input all 
 ## Testing
 
 ### User Stories
+Site user:
+- Easily use and understand the website.
+- Create account where they can see previous purchases.
+- See products available. Including status and options.
+- Add products to cart.
+- Search for products.
+- Navigate categories and get relevant results.
+- Pay for products.
+
+Admin user:
+- Add/edit/remove products.
+    - Thru the admin page the admin has the option to easily add, edit and delete products. They just need to input the information about the book and add the product. Every piece of information is specified by the input field.
+- See and cancel orders.
+- Change stock numbers.
 
 ### Device Testing
 
