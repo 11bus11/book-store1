@@ -9,6 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
         'author',
         'language',
         'price',
+        'stock',
         'description',
         'image',
     )
