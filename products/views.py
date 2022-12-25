@@ -11,6 +11,10 @@ def all_products(request):
     """view that shows products (sorting and search too)"""
 
     products = Product.objects.all()
+    query = None
+    categories = None
+    sort = None
+    direction = None
 
     context = {
             'products': products,
