@@ -64,6 +64,7 @@ Site user:
 - Easily use and understand the website.
 - Create account where they can see previous purchases.
 - See products available. Including status and options.
+    - The products page shows which products exist and if they are in stock or not. If the user is loged in, they can also add a product to their wish-list.
 - Add products to cart.
 - Search for products.
 - Navigate categories and get relevant results.
@@ -74,6 +75,7 @@ Admin user:
     - Thru the admin page the admin has the option to easily add, edit and delete products. They just need to input the information about the book and add the product. Every piece of information is specified by the input field.
 - See and cancel orders.
 - Change stock numbers.
+    - On the page where the admin can manipulate the products, there is a field for each product called "stock". Here the admin can input the available stock. if the stock is 0, the user can not add the item to their cart.
 
 ### Device Testing
 
@@ -111,7 +113,17 @@ This project was deployed with Heroku.
 - Make sure the live site is working.
 
 The database is on ElephantSQL.
-- Create an account on ElephantSQL.
+- Create an account on ElephantSQL. Do not forget to confirm your e-mail.
+- Click on "create a new instance" (it is a green button at the top right corner).
+- Give the information about the instance.
+    - Choose a name.
+    - Choose a plan (tiny turtle is free, and the one i used for this project).
+    - Add potential tags (not necessary)
+    - Select a region and data center. Choose one close to you for the best connection.
+- Preview the information to make sure everything is correct.
+- Create instance.
+- Click on your instance to see the information. 
+- Copy the url and add it as an allowed host in settings.py
 
 ## Credits
 ### Code
