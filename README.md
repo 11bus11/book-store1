@@ -32,7 +32,7 @@ I chose to create a simple structure, since the products are the thing that shou
 The base of the website is a simple navigation-bar with dropdown menues for products and accounts. These menues are in a main dropdown-menue on the mobile version. I chose to place the search bar at the top of the dropdown menue for the products. In the mobile version it is at the top of the main dropdown menue. 
 
 #### Typography
-I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Titillium Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
+I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Istok Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
 
 The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
@@ -78,8 +78,18 @@ Admin user:
     - On the page where the admin can manipulate the products, there is a field for each product called "stock". Here the admin can input the available stock. if the stock is 0, the user can not add the item to their cart.
 
 ### Device Testing
+The website was natively tested on these devices:
+- Acer Aspire 5
+
+
+The website was also tested on these devices thru Mozilla Dev Tools:
+- Ipad
+- 
 
 ### Browser Testing
+The website was tested on these browsers:
+- Mozilla Firefox
+- Google Crome
 
 ### Peer Review
 
@@ -123,7 +133,7 @@ The database is on ElephantSQL.
 - Preview the information to make sure everything is correct.
 - Create instance.
 - Click on your instance to see the information. 
-- Copy the url and add it as an allowed host in settings.py
+- Copy the url and add it
 
 ## Credits
 ### Code
