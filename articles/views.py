@@ -10,7 +10,7 @@ from .models import Article
 def articles(request):
     """view that shows articles"""
 
-    article = Article.objects.all()
+    articles = Article.objects.all()
     query = None
     categories = None
     sort = None
