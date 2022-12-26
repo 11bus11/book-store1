@@ -42,21 +42,24 @@ The products in the shop can be shown based on their categories or the user can 
 
 There is also a search bar where users can find products. 
 
-[Shop image](misc/shop-image.PNG)
+![Shop image](misc/shop-image.PNG)
 
 #### Product card
 A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also some buttons. One for opening the product details (for more information, see "products details", one for adding to cart and one for adding to wishlist. The last two buttons has some logic to them that tells them what they should show, and if they should be shown at all. The "add to cart" button changes to an "out of stock" card if the stock number is below 1, and the wishlist button only shows if the user is logged in. 
 
-[product card image]()
+![product card image]()
 
 #### Product details
 When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right.
 
-[product detail image]()
+![product detail image]()
 
 ### Bag
 
 ### Checkout
+
+### Articles
+The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, a the first few sentences of the article and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
 
 ### Messages
 
