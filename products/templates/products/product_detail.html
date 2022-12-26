@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_header %}Shop{% endblock %}
+{% block extra_subheader %}Find the books you need at Dino's{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="image-container my-5">
+                        <!-- Product image-->
+                        {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}"/>
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top" src="{{MEDIA_URL}}noimage.PNG" alt="{{ product.name }}"/>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="product-details-container mb-5 mt-md-5">
+                        <p class="mb-0">{{ product.name }}</p>
+                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                        {% if product.category %}
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+{% endblock %} 

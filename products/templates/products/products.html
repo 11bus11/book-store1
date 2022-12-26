@@ -13,11 +13,11 @@
                 <div class="card col-3  m-3">
                     <!-- Product image-->
                     {% if product.image %}
-                    <a href="">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}"/>
                     </a>
                     {% else %}
-                    <a href="">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top" src="{{MEDIA_URL}}noimage.PNG" alt="{{ product.name }}"/>
                     </a>
                     {% endif %}
