@@ -10,17 +10,21 @@
         <div class="container">
             <div class="row justify-content-center">
                 {% for article in articles %}
-                <div class="card col-3  m-3">
+                <div class="card col-8  m-3">
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
-                            <!-- Product name-->
+                            <!-- Article title -->
                             <h5 class="fw-bolder text-black">{{ article.title }}</h5>
+                            <!-- Article author-->
+                            <p class="fw-normal text-muted mb-0">Written by: {{ article.author }}</p>
+                            <!-- Last edited-->
+                            <p class="fw-normal text-muted mt-0">Last edited: {{ article.date }}</p>
                         </div>
                     </div>
-                    <!-- Product actions-->
+                    <!-- Article actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto mb-2" href="#">Read more</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto mb-2" href="#">Read article</a></div>
                     </div>
                 </div>
                 {% endfor %}
