@@ -26,14 +26,17 @@
                 <div class="col">
                     <div class="product-details-container mb-5 mt-md-5">
                         <p class="mb-0">{{ product.name }}</p>
-                        <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                        <p class="mb-2 text-muted">{{ product.author }}</p>
+                        <p class="lead mb-2 text-left font-weight-bold">${{ product.price }}</p>
+                        <p class="mb-0 text-left font-weight-normal">{{ product.description }}</p>
                         {% if product.category %}
-                        <p class="small mt-1 mb-0">
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                            </a>
-                        </p>
+                        <p class="small mt-1 mb-0 text-muted">Category: {{ product.category }}</p>
                         {% endif %}
+                        <div class="mt-2">
+                            <button class="btn btn-success mr-2">Add to cart</button>
+                            <button class="btn btn-outline-dark">Wishlist</button>
+                        </div>
+                        
                     </div>
                 </div>
                 
