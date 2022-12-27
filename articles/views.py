@@ -21,3 +21,15 @@ def articles(request):
     }
 
     return render(request, 'articles/articles.html', context)
+
+
+def article_full(request, article_id):
+    """view that shows the full article."""
+
+    article = get_object_or_404(Article, pk=article_id)
+
+    context = {
+            'article': article,
+        }
+
+    return render(request, 'articles/article_full.html', context)
