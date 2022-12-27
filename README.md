@@ -50,7 +50,7 @@ A product card is created for each product found on the database. Each card show
 ![product card image]()
 
 #### Product details
-When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right.
+When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right. Below the pruduct information is the "add to cart"/"out of stock" (depending on the stock numbers), and "add to wishlist" buttons.
 
 ![product detail image]()
 
@@ -93,6 +93,7 @@ Admin user:
 ### Device Testing
 The website was natively tested on these devices:
 - Acer Aspire 5
+- 1440p monitor (hooked up to a tower pc)
 
 
 The website was also tested on these devices thru Mozilla Dev Tools:
@@ -102,7 +103,7 @@ The website was also tested on these devices thru Mozilla Dev Tools:
 ### Browser Testing
 The website was tested on these browsers:
 - Mozilla Firefox
-- Google Crome
+- Google Chrome
 
 ### Peer Review
 
@@ -155,11 +156,11 @@ The database is on ElephantSQL.
 
 ## Credits
 ### Code
-A lot of the backend code is based on the [boutique ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from the Code Institute fullstack developer course.
+A lot of the backend code is based on the [boutique ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from the Code Institute fullstack developer course. The code is adapted to fit my project.
 
-For the frontend I used the [Shop item template](https://startbootstrap.com/template/shop-item), and the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). The first one is used for the specific items, and the second one is for the shop page.
+For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). It is used for the navbar and footer, as well as for the product cards.
 
 ### Content and Media
-All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page.
+All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The description for the books also tells the user where the description was copied from.
 
 Erik Vodopivec Forsman, 2022
