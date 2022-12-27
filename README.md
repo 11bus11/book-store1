@@ -59,7 +59,7 @@ When the user clicks on the button to get more information about a product, a pa
 ### Checkout
 
 ### Articles
-The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, a the first few sentences of the article and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
+The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph) and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
 
 ### Messages
 
@@ -80,7 +80,9 @@ Site user:
     - The products page shows which products exist and if they are in stock or not. If the user is loged in, they can also add a product to their wish-list.
 - Add products to cart.
 - Search for products.
+    - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book.
 - Navigate categories and get relevant results.
+    In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
 - Pay for products.
 
 Admin user:
@@ -112,7 +114,7 @@ The website was tested on these browsers:
 ### Manual testing
 - Tested the models by creating instances. This was to make sure the fields looked like they should and that everything worked as expected.
 - Tested if the database and the frontend was propperly connected by trying to show part of the data in the frontend. 
-- 
+- Made sure the search bar works by searching for words found in book titles, descriptions, languages and authors. The expected results were showed.
 
 ### Software Testing
 #### JavaScript Testing - Jest
@@ -121,6 +123,7 @@ The website was tested on these browsers:
 
 ### Bugs
 #### Fixed Bugs
+- I had a bit of trouble getting the product view to work. The products would not show up on the website. I solved it when i realised the problem was caused by a spelling error. After i fixed the spelling, it all worked as expected. I later had a similar problem when i implemented the ability to filter by category. The first letter in the category needed to be upper-case, which i had forgotten.
 
 #### Unfixed bugs
 
