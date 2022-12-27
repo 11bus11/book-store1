@@ -16,8 +16,19 @@ def all_products(request):
     sort = None
     direction = None
 
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "No search criteria was entered!")
+                return redirext(reverse('products'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(language__icontains=query) | Q(author__icontains=query)
+            products = products.filter(queries)
+
     context = {
             'products': products,
+            'search_term': query,
         }
 
     return render(request, 'products/products.html', context)
