@@ -108,6 +108,11 @@ The website was tested on these browsers:
 
 ### Validator Testing
 
+### Manual testing
+- Tested the models by creating instances. This was to make sure the fields looked like they should and that everything worked as expected.
+- Tested if the database and the frontend was propperly connected by trying to show part of the data in the frontend. 
+- 
+
 ### Software Testing
 #### JavaScript Testing - Jest
 
