@@ -9,13 +9,16 @@ def bag_contents(request):
     product_count = 0
 
     if product_count * 0.3 >= 2:
-        delivery = 2 * Decimal(settings.DELIVERY_BASE_COST / 100)
+        delivery = 2 * Decimal(settings.DELIVERY_BASE_COST)
     if product_count * 0.3 >= 6:
-        delivery = 3 * Decimal(settings.DELIVERY_BASE_COST / 100)
+        delivery = 3 * Decimal(settings.DELIVERY_BASE_COST)
     else:
-        delivery = Decimal(settings.DELIVERY_BASE_COST / 100)
+        delivery = Decimal(settings.DELIVERY_BASE_COST)
 
-    grand_total = delivery + total
+    if total == 0:
+        grand_total = total
+    else:
+        grand_total = delivery + total
     
     context = {
         'bag_items': bag_items,
