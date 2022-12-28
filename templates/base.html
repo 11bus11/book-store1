@@ -15,7 +15,7 @@
 
     {% block corecss %}
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-shop-template.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,9 @@
     {% block corejs %}
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
     <script href="{% static 'js/script.js' %}"></script>
     {% endblock %}
 
@@ -43,39 +45,38 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container px-4 px-lg-5 choices-nav">
                 <a class="navbar-brand" href="{% url 'home' %}">Dino's book-store</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav list-inline me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" href="{% url 'articles' %}">Articles</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="logo-font nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Shop
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                                <a href="{% url 'products' %}?category=Adventure" class="dropdown-item">Adventure</a>
-                                <a href="{% url 'products' %}?category=Romance" class="dropdown-item ">Romance</a>
-                                <a href="{% url 'products' %}?category=Fantasy" class="dropdown-item ">Fantasy</a>
-                                <a href="{% url 'products' %}?category=History" class="dropdown-item">History</a>
-                                <a href="{% url 'products' %}?category=Nature" class="dropdown-item">Nature</a>
-                                <a href="{% url 'products' %}?category=Religion" class="dropdown-item">Religion</a>
-                                <a href="" class="dropdown-item">
-                                    {% if request.user.is_authenticated %}
-                                        <a href="" class="dropdown-item">Wishlist</a>
-                                    {% endif %}
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-black" href="{% url 'articles' %}">Articles</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Shop
                                 </a>
-                            </div>
-                        </li>
-                        <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link d-block " href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                                        <a href="{% url 'products' %}?category=Adventure" class="dropdown-item">Adventure</a>
+                                        <a href="{% url 'products' %}?category=Romance" class="dropdown-item ">Romance</a>
+                                        <a href="{% url 'products' %}?category=Fantasy" class="dropdown-item ">Fantasy</a>
+                                        <a href="{% url 'products' %}?category=History" class="dropdown-item">History</a>
+                                        <a href="{% url 'products' %}?category=Nature" class="dropdown-item">Nature</a>
+                                        <a href="{% url 'products' %}?category=Religion" class="dropdown-item">Religion</a>
+                                        <a href="" class="dropdown-item">
+                                            {% if request.user.is_authenticated %}
+                                                <a href="" class="dropdown-item">Wishlist</a>
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Account
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                         <a href="" class="dropdown-item">Product Management</a>
                                         <a href="" class="dropdown-item">Article Management</a>
@@ -87,9 +88,11 @@
                                     <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                     <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
-                            </div>
-                        </li>
-                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
