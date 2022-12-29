@@ -33,18 +33,10 @@
                         <p class="small mt-1 mb-0 text-muted">Category: {{ product.category }}</p>
                         {% endif %}
                         <div class="mt-2">
-                            {% if product.stock > 0 %}
-                            <button class="btn btn-success mt-auto mr-2" href="#">Add to cart</button>
-                            {% else %}
-                            <button class="btn btn-secondary mt-auto mr-2" href="#">Out of stock</button>
-                            {% endif %}
-    
-                            {% if request.user.is_authenticated %}
-                            <button class="btn btn-outline-dark mt-auto mr-2" href="#">Add to wishlist</button>
-                            {% endif %}
-
-                            <form class="form" action="" method="POST">
-                                <div class="form-row">
+                            
+                            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row mb-2">
                                     <div class="col-12">
                                         <p class="mt-3"><strong>Quantity:</strong></p>
                                         <div class="form-group col-5 col-md-2">
@@ -63,18 +55,27 @@
                                             </div>
                                         </div>
                                     </div>
-        
                                     <div class="col{% if s %}-12 mt-2{% endif %}">
-                                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                            Keep Shopping
+                                        <a href="{% url 'products' %}" class="btn btn-outline-dark  mt-5">
+                                            <span class="">Keep Shopping</span>
                                         </a>
 
+                                        {% if product.stock > 0 %}
+                                        <input type="submit" class="btn btn-success mt-5" value="Add to Bag">
+                                        {% else %}
+                                        <button class="btn btn-secondary mt-5 mr-2" href="#">Out of stock</button>
+                                        {% endif %}
                                     </div>
- 
-                                    
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
                             </form>
+    
+                            {% if request.user.is_authenticated %}
+                            <button class="btn btn-outline-dark mt-auto mr-2" href="#">Add to wishlist</button>
+                            {% endif %}
+
                         </div>
+                        
                     </div>
                 </div>
             </div>
