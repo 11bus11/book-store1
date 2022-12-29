@@ -106,6 +106,8 @@ The website was also tested on these devices thru Mozilla Dev Tools:
 The website was tested on these browsers:
 - Mozilla Firefox
 - Google Chrome
+- Safari
+- DuckDuckGo (mobile)
 
 ### Peer Review
 

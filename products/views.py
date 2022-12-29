@@ -45,6 +45,8 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    print(product)
+
     context = {
             'product': product,
         }

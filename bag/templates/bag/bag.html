@@ -11,7 +11,10 @@
             <div class="row">
                 <div class="col">
                     {% if bag_items %} 
-                    <div class="table-responsive"></div>
+                        {% for item in bag_items %}
+                            <p>{{ item.product.name }}</p>
+                        {% endfor %}
+                        <div class="table-responsive"></div>
                     {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-dark">Keep shopping</a>
