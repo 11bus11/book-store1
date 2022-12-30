@@ -117,6 +117,7 @@
                                     <a href="{% url 'products' %}?category=History" class="dropdown-item">History</a>
                                     <a href="{% url 'products' %}?category=Nature" class="dropdown-item">Nature</a>
                                     <a href="{% url 'products' %}?category=Religion" class="dropdown-item">Religion</a>
+                                    <hr class="dropdown-divider">
                                     <a href="" class="dropdown-item">
                                         {% if request.user.is_authenticated %}
                                             <a href="" class="dropdown-item">Wishlist</a>
@@ -136,6 +137,7 @@
                                     <a href="" class="dropdown-item">Product Management</a>
                                     <a href="" class="dropdown-item">Article Management</a>
                                     <a href="" class="dropdown-item">Messages</a>
+                                    <hr class="dropdown-divider">
                                     {% endif %}
                                     <a href="" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -150,12 +152,10 @@
                 </div>
                 <form class="content-align-center" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                        <input class="form-control border border-black" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <img class="black" src="{{MEDIA_URL}}magnifying-glass-solid.svg" alt="search">
-                                </span>
+                            <button class="form-control btn btn-black border border-black" type="submit">
+                                    Search
                             </button>
                         </div>
                     </div>
@@ -163,7 +163,6 @@
                 <form class="d-flex d-none d-md-block">
                     <button class="btn btn-outline-dark " type="submit">
                         <a class="text-black text-decoration-none" href="{% url 'bag' %}">
-                        <i class="bi-cart-fill me-1"></i>
                         Cart
                         <span class="badge bg-dark text-white ms-1 rounded-pill">
                             {% if grand_total %}

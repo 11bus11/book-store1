@@ -9,13 +9,18 @@
     <section class="py-5">
        <div class="container">
             <div class="col">
+                <!-- About us card -->
                 <div class="row">
-                    <div class="card mb-5">
-                        <img src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
+                    <div class="card mb-5 ">
                         <div class="card-body">
-                            <h2>About us!</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis dolores nesciunt labore cum magni minus molestias amet! Atque mollitia fugiat voluptates assumenda iusto repellendus fugit esse blanditiis labore facere!</p>
-                            <p>//Dino and Erik</p>
+                            <div class="d-md-flex d-md-inline">
+                                <img class="col-12 col-md-5" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
+                                <div class=" row col-12 col-md-4 m-3" >
+                                    <h2>About us!</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis dolores nesciunt labore cum magni minus molestias amet! Atque mollitia fugiat voluptates assumenda iusto repellendus fugit esse blanditiis labore facere!</p>
+                                    <p>//Dino and Erik</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -25,14 +30,19 @@
                     <div class="mb-3 col-md-4">
                         <label for="exampleFormControlInput1" class="form-label">Name</label>
                         <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name Lastname">
+                        
+                      
                     </div>
                     <div class="mb-3 col-md-4">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <label for="exampleFormControlInput1" class="form-label">*Email address</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <div class="invalid-feedback">
+                            Required field.
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">*Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <input type="submit" value="Send">
