@@ -17,9 +17,9 @@
                 {% for product in products %}
                 <div class="card col-md-3 col-10 m-3">
                     <!-- Product image-->
-                    {% if product.image %}
+                    {% if product.image_place %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}"/>
+                        <img class="card-img-top" src="{{MEDIA_URL}}/books/{{ product.image_place }}" alt="{{ product.name }}"/>
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
