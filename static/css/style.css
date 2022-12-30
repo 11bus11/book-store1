@@ -24,3 +24,8 @@ nav {
     background-color: var(--dark-green);
 }
 
+
+.btn-sm, .btn-group-sm > .btn {
+    font-weight: 900;
+    
+}

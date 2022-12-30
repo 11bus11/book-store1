@@ -154,7 +154,7 @@
                     <div class="input-group w-100">
                         <input class="form-control border border-black" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black" type="submit">
+                            <button class="form-control btn btn-dark rounded-0" type="submit">
                                     Search
                             </button>
                         </div>
@@ -204,5 +204,10 @@
                 <p class="m-0 text-center text-white">Copyright &copy; Dino 2023</p>
             </div>
         </footer>
+        {% block postloadjs %}
+        <script type="text/javascript">
+            $('.toast').toast('show');
+        </script>
+        {% endblock %}
     </body>
 </html>

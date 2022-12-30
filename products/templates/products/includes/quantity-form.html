@@ -1,0 +1,29 @@
+
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group input-group-{{ item.item_id }}">
+            <div class="input-group-prepend">
+                <button class="decrement-qty btn btn-sm btn-dark rounded-0 decrement-qty_{{ item.item_id }}  
+                    data-item_id="{{ item.item_id }}">
+                    <span>
+                        <p fw-bolder text-center>-</p>
+                    </span>
+                </button>
+            </div>
+            <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} 
+                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                data-item_id="{{ item.item_id }}">
+            <div class="input-group-append">
+                <button class="increment-qty btn btn-sm btn-dark rounded-0 increment-qty_{{ item.item_id }} 
+                    data-item_id="{{ item.item_id }}">
+                    <span>
+                        <p fw-bold>+</p>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
