@@ -39,22 +39,10 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto mb-2" href="{% url 'product_detail' product.id %}">More info</a></div>
-                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                            {% csrf_token %}
-                            <div class="form-row mb-2">
-                                <div class="col d-flex justify-content-center">
-                                    {% if product.stock > 0 %}
-                                    <input type="submit" class="btn btn-success mb-0" value="Add to Bag">
-                                    {% else %}
-                                    <button class="btn btn-secondary mb-0" href="#">Out of stock</button>
-                                    {% endif %}
-                                </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </div>
-                        </form>
-
-                        {% if request.user.is_authenticated %}
-                        <div class="text-center"><a class="btn btn-outline-dark mt-0" href="#">Add to wishlist</a></div>
+                        {% if product.stock > 0 %}
+                        <p class="text-muted text-center">In stock</p>
+                        {% else %}
+                        <p class="text-muted text-center">Out of stock</p>
                         {% endif %}
                     </div>
                 </div>

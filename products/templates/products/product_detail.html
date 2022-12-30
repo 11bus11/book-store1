@@ -25,7 +25,7 @@
                 </div>
                 <div class="col">
                     <div class="product-details-container mb-5 mt-md-5">
-                        <p class="mb-0">{{ product.name }}</p>
+                        <h4 class="mb-0 fw-bold">{{ product.name }}</h4>
                         <p class="mb-2 text-muted">{{ product.author }}</p>
                         <p class="lead mb-2 text-left font-weight-bold">${{ product.price }}</p>
                         <p class="mb-0 text-left font-weight-normal">{{ product.description }}</p>
@@ -44,15 +44,6 @@
                                                 <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
                                                     name="quantity" value="1" min="1" max="{{ product.stock }}"
                                                     data-item_id="{{ product.id }}">
-                                                <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                                        data-item_id="{{ product.id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-plus"></i>
-                                                        </span>
-                                                        
-                                                    </button>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -10,16 +10,37 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    {% if bag_items %} 
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                          </tr>
+                        </thead>
+                        {% if bag_items %}
+                        <tbody>
                         {% for item in bag_items %}
-                            <p>{{ item.product.name }}</p>
+                        
+                        <tr>
+                            <th><a class="text-decoration-none text-black" href="{% url 'product_detail' item.item_id  %}">{{ item.product.name }}</a></th>
+                            <td>{{ item.product.price }}kr</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.item_total }}kr</td>
+                        </tr>
                         {% endfor %}
-                        <div class="table-responsive"></div>
+                        </tbody>
+                    </table>
+                    <p>Products: {{ total }}kr</p>
+                    <p>Delivery: {{ delivery }}kr</p>
+                    <p class="fw-bold">Total: {{ grand_total|floatformat:2 }}kr</p>
+                    
+
                     {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Keep shopping</a>
                     {% endif %}
-                    
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Keep shopping?</a>
                 </div>
             </div>
         </div>
