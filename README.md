@@ -78,7 +78,8 @@ Site user:
 - Create account where they can see previous purchases.
 - See products available. Including status and options.
     - The products page shows which products exist and if they are in stock or not. If the user is loged in, they can also add a product to their wish-list.
-- Add products to cart.
+- Add and remove products in the cart.
+    - The user can add products to the cart from the product-detail page. They can remove them from the bag by going to the bag and clicking "remove" on the item they no longer want.
 - Search for products.
     - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book.
 - Navigate categories and get relevant results.
@@ -110,6 +111,7 @@ The website was tested on these browsers:
 - DuckDuckGo (mobile)
 
 ### Peer Review
+- I showed the front-end to my dad, and he thought it looked good. The thing he asked about was the lack of images, which I had not yet gotten to. Other than that he thought it looked good and was easy to use. 
 
 ### Validator Testing
 
@@ -117,6 +119,7 @@ The website was tested on these browsers:
 - Tested the models by creating instances. This was to make sure the fields looked like they should and that everything worked as expected.
 - Tested if the database and the frontend was propperly connected by trying to show part of the data in the frontend. 
 - Made sure the search bar works by searching for words found in book titles, descriptions, languages and authors. The expected results were showed.
+- While implementing the bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
 
 ### Software Testing
 #### JavaScript Testing - Jest
@@ -126,6 +129,7 @@ The website was tested on these browsers:
 ### Bugs
 #### Fixed Bugs
 - I had a bit of trouble getting the product view to work. The products would not show up on the website. I solved it when i realised the problem was caused by a spelling error. After i fixed the spelling, it all worked as expected. I later had a similar problem when i implemented the ability to filter by category. The first letter in the category needed to be upper-case, which i had forgotten.
+- When I wrote the link to the product_details of the bag items, I could not get the product id to work. After a while i realised that i had been referencing the wrong id.
 
 #### Unfixed bugs
 
@@ -165,7 +169,9 @@ A lot of the backend code is based on the [boutique ado](https://github.com/Code
 
 For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). It is used for the navbar and footer, as well as for the product cards.
 
+Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
+
 ### Content and Media
-All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The description for the books also tells the user where the description was copied from.
+All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
 
 Erik Vodopivec Forsman, 2022
