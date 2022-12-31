@@ -11,6 +11,7 @@
             <div class="row">
                 <div class="col">
                     <table class="table table-hover">
+                        {% if bag_items %}
                         <thead>
                           <tr>
                             <th scope="col">Product</th>
@@ -19,17 +20,13 @@
                             <th scope="col">Total</th>
                           </tr>
                         </thead>
-                        {% if bag_items %}
                         <tbody>
                         {% for item in bag_items %}
                         
                         <tr>
                             <th>
                                 <a class="text-decoration-none text-black" href="{% url 'product_detail' item.item_id  %}">{{ item.product.name }}</a> <br>
-                                <form class="form" action="{% url 'remove_from_bag' product.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="submit" class="btn btn-dark mt-5" value="Remove item">
-                                </form>
+                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                             </th>
                             <td>{{ item.product.price }}kr</td>
                             <td>{{ item.quantity }}</td>
@@ -46,7 +43,7 @@
                     {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     {% endif %}
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Keep shopping?</a>
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark mb-5">Keep shopping?</a>
                 </div>
             </div>
         </div>
@@ -57,12 +54,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
-</script>
-{% include 'products/includes/quantity_input_script.html' %}
+
 
 <script type="text/javascript">
     // Remove item and reload on click

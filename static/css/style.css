@@ -25,7 +25,6 @@ nav {
 }
 
 
-.btn-sm, .btn-group-sm > .btn {
-    font-weight: 900;
-    
+.remove-item {
+    cursor: pointer;
 }

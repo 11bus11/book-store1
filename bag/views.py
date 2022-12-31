@@ -34,6 +34,7 @@ def add_to_bag(request, item_id):
 
 def remove_from_bag(request, item_id):
     """Add items to shopping bag"""
+    print("hello")
     try:
         product = get_object_or_404(Product, pk=item_id)
         bag = request.session.get('bag', {})
