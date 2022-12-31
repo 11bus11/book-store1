@@ -8,6 +8,7 @@ Site user:
 - Create account where they can see previous purchases.
 - See products available. Including status and options.
 - Add products to cart.
+- Remove product from cart.
 - Search for products.
 - Navigate categories and get relevant results.
 - Pay for products.
@@ -81,7 +82,7 @@ Site user:
 - Add and remove products in the cart.
     - The user can add products to the cart from the product-detail page. They can remove them from the bag by going to the bag and clicking "remove" on the item they no longer want.
 - Search for products.
-    - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book.
+    - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book. Only the books with a match to the search term shows up.
 - Navigate categories and get relevant results.
     In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
 - Pay for products.
@@ -91,7 +92,7 @@ Admin user:
     - Thru the admin page the admin has the option to easily add, edit and delete products. They just need to input the information about the book and add the product. Every piece of information is specified by the input field.
 - See and cancel orders.
 - Change stock numbers.
-    - On the page where the admin can manipulate the products, there is a field for each product called "stock". Here the admin can input the available stock. if the stock is 0, the user can not add the item to their cart.
+    - On the page where the admin can manipulate the products, there is a field for each product called "stock". Here the admin can input the available stock. If the stock is 0, the user can not add the item to their cart.
 
 ### Device Testing
 The website was natively tested on these devices:
@@ -119,7 +120,8 @@ The website was tested on these browsers:
 - Tested the models by creating instances. This was to make sure the fields looked like they should and that everything worked as expected.
 - Tested if the database and the frontend was propperly connected by trying to show part of the data in the frontend. 
 - Made sure the search bar works by searching for words found in book titles, descriptions, languages and authors. The expected results were showed.
-- While implementing the bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
+- While implementing the add-to-bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
+- For the remove-from-bag functionality, I tested if it worked in the same way I did the add-to-bag function.
 
 ### Software Testing
 #### JavaScript Testing - Jest
@@ -129,9 +131,10 @@ The website was tested on these browsers:
 ### Bugs
 #### Fixed Bugs
 - I had a bit of trouble getting the product view to work. The products would not show up on the website. I solved it when i realised the problem was caused by a spelling error. After i fixed the spelling, it all worked as expected. I later had a similar problem when i implemented the ability to filter by category. The first letter in the category needed to be upper-case, which i had forgotten.
-- When I wrote the link to the product_details of the bag items, I could not get the product id to work. After a while i realised that i had been referencing the wrong id.
+- When I wrote the link to the product_details of the bag items, I could not get the product id to work. After a while i realised that i had been referencing the wrong id. Had similar problems later in the project too.
 
 #### Unfixed bugs
+- It is possible to add more products than there is in stock to the bag. If you do all you get is a message saying you added a higher amount than the current stock and that the shipping of these products will be delayed due to this.
 
 ### Deployment
 This project was deployed with Heroku.
@@ -172,6 +175,6 @@ For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/
 Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
 
 ### Content and Media
-All pictures of the books are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
+All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
 
 Erik Vodopivec Forsman, 2022
