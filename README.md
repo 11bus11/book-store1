@@ -19,7 +19,7 @@ Admin user:
 - Change stock numbers.
 
 ### Colour
-I chose to make this e-store in blue and green shades. These colours were chosen due to it being a bit different than the online book-stores where i live (sweden), and due to blue being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, chich mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolices security and trust, and green symbolices harmony and safety. All the colour choices was checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
+I chose to make this e-store in blue- green shades. These colours were chosen due to it being a bit different than the online book-stores where i live (sweden), and due to a bluer green being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, chich mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolices security and trust, and green symbolices harmony and safety. All the colour choices was checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
 
 ![colour-palette](misc/book-store-palette.png)
 ![colour-checker-blue-green](misc/colour-check-dark-green.PNG)
@@ -30,7 +30,10 @@ I chose to make this e-store in blue and green shades. These colours were chosen
 #### Structure
 I chose to create a simple structure, since the products are the thing that should attract attention. All products have a green background in the photos. This is so that they fit into the colour-palette while also attracting attention. Right below the navigation bar there is a darker field telling the user the name of the page. 
 
-The base of the website is a simple navigation-bar with dropdown menues for products and accounts. These menues are in a main dropdown-menue on the mobile version. I chose to place the search bar at the top of the dropdown menue for the products. In the mobile version it is at the top of the main dropdown menue. 
+The base of the website is a simple navigation-bar with dropdown menues for products and accounts, and links for articles and home. These menues are in a dropdown-menue on the mobile version. I chose to place the search bar right below the dropdown menue and brand-name on the mobile view. That way there is no need to open a dropdown just to search for a product.
+
+![Desktop nav]()
+![Mobile nav]()
 
 #### Typography
 I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Istok Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
@@ -39,19 +42,19 @@ The reason I chose these fonts were that they worked well with the colour palett
 
 ## Features
 ### Shop
-The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. 
+The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. From the product card you can go to the product detail page. This is where the user can add products to the shopping bag.
 
 There is also a search bar where users can find products. 
 
 ![Shop image](misc/shop-image.PNG)
 
 #### Product card
-A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also some buttons. One for opening the product details (for more information, see "products details", one for adding to cart and one for adding to wishlist. The last two buttons has some logic to them that tells them what they should show, and if they should be shown at all. The "add to cart" button changes to an "out of stock" card if the stock number is below 1, and the wishlist button only shows if the user is logged in. 
+A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button there is some muted text telling the user if the item is in stock or not. 
 
 ![product card image]()
 
 #### Product details
-When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right. Below the pruduct information is the "add to cart"/"out of stock" (depending on the stock numbers), and "add to wishlist" buttons.
+When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right (in the mobile view the image is above the information). Below the pruduct information is the quantity selector, "add to cart"/"out of stock" and "add to wishlist" buttons. If the stock numbers are below 1, the "out of stock" will show up. This button does not link to the shopping cart. If the product is in stock, the "add to cart" button will appear. This button will add the chosen quantity of an item to the cart. The wishlist button only appears if the user is signed in. 
 
 ![product detail image]()
 
