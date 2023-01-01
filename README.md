@@ -53,6 +53,8 @@ When placing an order the checkout model will be used.
 
 ### Wishlist
 
+### Contact
+
 ## Features
 ### Shop
 The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. From the product card you can go to the product detail page. This is where the user can add products to the shopping bag.
@@ -76,10 +78,15 @@ The bag is a table with one row for each item. The row contains the product name
 
 Below the items there is information about the delivery cost, the product cost, and the total cost. The checkout button is below this, right by the "keep shopping" button. There is also a checkout button at the top.
 
+### Wishlist
+
 ### Checkout
 
 ### Articles
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph) and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
+
+### Contact us
+
 
 ### Messages
 
