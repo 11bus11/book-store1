@@ -1,12 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+
+from .forms import ContactForm
 
 # Create your views here.
 
 
 def index(request):
     """view that returns index page"""
-    return render(request, 'home/index.html')
 
+    contact_form = ContactForm()
+    template = 'home/index.html'
+    context = {
+        'contact_form': contact_form,
+    }
 
-
+    return render(request, template, context)
 

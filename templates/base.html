@@ -47,7 +47,7 @@
                 <a class="navbar-brand col-8 col-md-3 text-center" href="{% url 'home' %}">Dino's book-store</a>
                 <!-- Mobile navigation (dropdown) -->
                 <div class="btn-group dropdown d-block d-md-none">
-                    <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle mb-2 mt-2" data-bs-toggle="dropdown" aria-expanded="false">
                     Menu
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -177,14 +177,16 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="py-5 page-header">
+        <header class="py-5 page-header mt-md-0 mt-4">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
+                <div class="text-center text-white ">
                     <h1 class="display-4 fw-bolder header-text">{% block extra_header %}{% endblock %}</h1>
                     <p class="lead fw-normal text-white mb-0">{% block extra_subheader %}{% endblock %}</p>
                 </div>
             </div>
         </header>
+
+        <!--Message container-->
         {% if messages %}
             <div class="message-container"></div>
         {% endif %}

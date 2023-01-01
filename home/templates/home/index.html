@@ -27,25 +27,23 @@
 
                 <!-- Message form -->
                 <div class="row">
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name Lastname">
-                        
-                      
-                    </div>
-                    <div class="mb-3 col-md-4">
-                        <label for="exampleFormControlInput1" class="form-label">*Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                        <div class="invalid-feedback">
-                            Required field.
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="{% url 'home' %}" method="POST" id="contact-form">
+                                {% csrf_token %}
+                                <fieldset class="rounded px-3 mb-5">
+                                    <p class="fw-bold mb-0">Send us a message!</p> <br>
+                                    {{ contact_form.name }}
+                                    {{ contact_form.email }}
+                                </fieldset>
+                                <fieldset class="rounded px-3 mb-5" id="message-field">
+                                    {{ contact_form.message }}
+                                </fieldset>
+                            </form>
+                            <button class="btn btn-outline-dark mt-3 justify-content-center">Send message</button>
                         </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">*Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <input type="submit" value="Send">
+                </div> 
             </div>
        </div>
     </section>  

@@ -20,8 +20,7 @@
                         </button>
                     </a>
                     <p class="text-black">Order Summary ({{ product_count }})</p>
-
-                    <div class="row">
+                    <div class="row col-12">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -43,65 +42,64 @@
                         </table>
                         {% endfor %}
                     <div class="row text-black">
-                        <div class="col-4">
-                            <p class="my-0">Order Total: {{ total | floatformat:2 }}kr</p>
+                        <div class="col-10">
+                            <p class="my-0">Products: {{ total | floatformat:2 }}kr</p>
                             <p class="my-0">Delivery: {{ delivery | floatformat:2 }}kr</p>
-                            <p class="my-0">Grand Total: {{ grand_total | floatformat:2 }}kr</p>
+                            <p class="my-0 mb-2">Total: {{ grand_total | floatformat:2 }}kr</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 ">
-                    <p class="text-muted">Please fill out the form below to complete your order</p>
-                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                        {% csrf_token %}
-                        <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label small text-black px-2 w-auto">Details</legend> <br>
-                            {{ order_form.full_name }}
-                            {{ order_form.email }}
-                        </fieldset>
-                        <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend> <br>
-                            {{ order_form.phone_number }} <br>
-                            {{ order_form.street_address1 }}
-                            {{ order_form.street_address2 }} <br>
-                            {{ order_form.town_or_city }}
-                            {{ order_form.county }} <br>
-                            {{ order_form.postcode }}
-                            {{ order_form.country }} <br>
-                            <div class="form-check form-check-inline float-right mr-0">
-                                {% if user.is_authenticated %}
-                                    <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                                    <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-                                {% else %}
-                                    <label class="form-check-label" for="id-save-info">
-                                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                        <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                                    </label>
-                                {% endif %}
-                            </div>
-                        </fieldset>
-                        <fieldset class="px-3">
-                            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                            <!-- A Stripe card element will go here -->
-                            <div class="mb-3" id="card-element"></div>
-                            <!-- Used to display form errors -->
-                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                            <!-- Pass the client secret to the view so we can get the payment intent id -->
-                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                        </fieldset>      
-                        <a class="text-decoration-none">
-                            <button id="submit-button" class="btn btn-success">
-                            Complete Order
-                            </button>
-                        </a>
-                        <p class="small text-danger my-0 mt-2">
-                            <span class="icon">
-                                <i class="fas fa-exclamation-circle"></i>
-                            </span>
-                            <span>Your card will be charged <strong>{{ grand_total|floatformat:2 }}kr</strong></span>
-                        </p>
+                <div class="col-12">
+                    <div class="row">
+                        <p class="text-muted">Please fill out the form below to complete your order</p>
+                        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                            {% csrf_token %}
+                            <fieldset class="rounded px-3 mb-5">
+                                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend> <br>
+                                {{ order_form.full_name }}
+                                {{ order_form.email }}
+                            </fieldset>
+                            <fieldset class="rounded px-3 mb-5">
+                                <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend> <br>
+                                {{ order_form.phone_number }} <br>
+                                {{ order_form.street_address1 }}
+                                {{ order_form.street_address2 }} <br>
+                                {{ order_form.town_or_city }}
+                                {{ order_form.county }} <br>
+                                {{ order_form.postcode }}
+                                {{ order_form.country }} <br>
+                                <div class="form-check form-check-inline float-right mr-0">
+                                    {% if user.is_authenticated %}
+                                        <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                                    {% else %}
+                                        <label class="form-check-label" for="id-save-info">
+                                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                        </label>
+                                    {% endif %}
+                                </div>
+                            </fieldset>
+                            <fieldset class="px-3">
+                                <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                                <!-- A Stripe card element will go here -->
+                                <div class="mb-3" id="card-element"></div>
+                                <!-- Used to display form errors -->
+                                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                                <!-- Pass the client secret to the view so we can get the payment intent id -->
+                                <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                            </fieldset>      
+                            <a class="text-decoration-none">
+                                <button id="submit-button" class="btn btn-success">
+                                Complete Order
+                                </button>
+                            </a>
+                            <p class="small text-danger my-0 mt-2">
+                                <span>Your card will be charged <strong>{{ grand_total|floatformat:2 }}kr</strong></span>
+                            </p>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
