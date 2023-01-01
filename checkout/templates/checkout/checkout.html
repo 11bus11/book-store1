@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style-checkout.css' %}">
+{% endblock %}
+
+{% block extra_header %}Checkout{% endblock %}
+{% block extra_subheader %}Please fill out the form below.{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+{% endblock %} 
+
+
+{% block postloadjs %}
+{{ block.super }}
+
+
+{% endblock %}
