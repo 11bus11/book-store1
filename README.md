@@ -59,6 +59,9 @@ When the user clicks on the button to get more information about a product, a pa
 ![product detail image]()
 
 ### Bag
+The bag is a table with one row for each item. The row contains the product name (this links to the product detail page), the price of the product, the quantity and the total cost for the whole quantity. Below the name of the product there is red text saying "remove". When it is clicked on, it will remove the item from the bag.
+
+Below the items there is information about the delivery cost, the product cost, and the total cost. The checkout button is below this, right by the "keep shopping" button. There is also a checkout button at the top.
 
 ### Checkout
 
