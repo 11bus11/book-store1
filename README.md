@@ -40,6 +40,19 @@ I chose to use the font "Rubik Bubbles" for the store name and main page titles.
 
 The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
+## Models
+These are the main models in this project.
+### Product
+This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
+
+### Article
+The "article" models the name of the article, the author, the date it was last edited, and the article content. It also has a field for an image-link, in case the artice has a picture. 
+
+### Checkout
+When placing an order the checkout model will be used.
+
+### Wishlist
+
 ## Features
 ### Shop
 The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. From the product card you can go to the product detail page. This is where the user can add products to the shopping bag.
