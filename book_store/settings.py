@@ -24,6 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h^39w=j=ot(7k^04r7ri1tn!jn37k(g735fy@+cnonhpb)ee3u'
 
+DATABASE_URL = 'postgres://zaomcijv:paoBdM5_9aU7B-ssqFHhzxEa7gT9f9rz@surus.db.elephantsql.com/zaomcijv'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -79,16 +81,16 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required allauth
+                'django.template.context_processors.request',  # required allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
-            'bulitins': [
-                'crispy_forms.templatetags.crispy_forms_tags',
-                'crispy_forms.templatetags.crispy_forms_field'
-            ]
+            #'builitins': [
+            #    'crispy_forms.templatetags.crispy_forms_tags',
+            #    'crispy_forms.templatetags.crispy_forms_field'
+            #]
         },
     },
 ]

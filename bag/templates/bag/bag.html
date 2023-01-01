@@ -12,6 +12,11 @@
                 <div class="col">
                     <table class="table table-hover">
                     {% if bag_items %}
+                        <a href="{% url 'checkout' %}">
+                            <button class="btn btn-success mt-4">
+                                Checkout
+                            </button>
+                        </a>
                         <thead>
                           <tr>
                             <th scope="col">Product</th>
@@ -27,22 +32,24 @@
                                 <a class="text-decoration-none text-black" href="{% url 'product_detail' item.item_id  %}">{{ item.product.name }}</a> <br>
                                 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                             </th>
-                            <td>{{ item.product.price }}kr</td>
+                            <td>{{ item.product.price | floatformat:2 }}kr</td>
                             <td>{{ item.quantity }}</td>
-                            <td>{{ item.product.price}}kr</td>
+                            <td>{{ item.product.price | floatformat:2 }}kr</td>
                         </tr>
                         {% endfor %}
                         </tbody>
                     </table>
-                    <p>Products: {{ total }}kr</p>
-                    <p>Delivery: {{ delivery }}kr</p>
+                    <p>Products: {{ total | floatformat:2 }}kr</p>
+                    <p>Delivery: {{ delivery | floatformat:2}}kr</p>
                     <p class="fw-bold">Total: {{ grand_total|floatformat:2 }}kr</p>
+
                     
 
                     {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     {% endif %}
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark mb-5">Keep shopping?</a>
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark mt-4 mb-4">Keep shopping?</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-success mt-4 mb-4">Checkout</a>
                 </div>
             </div>
         </div>
