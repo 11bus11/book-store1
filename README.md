@@ -1,6 +1,12 @@
 # E-shop - Book store
 This is a store i created for my 5th project in the Code Institute Software Development Course. It is a simple book store with a small selection of books. It is called Dino's book store, after my cat. 
 
+## Creator goals
+- Create a functioning e-commerse website with a search bar.
+- Making it possible to add products and articles from the front-end.
+- Giving the user the option to add a product to a wishlist.
+- The user being able to contact the store directly from the website.
+
 ## UX - User Experience
 ### User Stories
 Site user:
@@ -40,7 +46,7 @@ I chose to use the font "Rubik Bubbles" for the store name and main page titles.
 
 The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
-## Models
+## Key models
 These are the main models in this project.
 ### Product
 This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
@@ -49,11 +55,12 @@ This model is for all the info needed for the products. It has fields for in exa
 The "article" models the name of the article, the author, the date it was last edited, and the article content. It also has a field for an image-link, in case the artice has a picture. 
 
 ### Checkout
-When placing an order the checkout model will be used.
+When placing an order the checkout model will be used. It has both writable and non-writable object, depending on if the user needs to provide information or not.
 
 ### Wishlist
 
 ### Contact
+The contact model is used for the contact form on the home page. It contains name, e-mail, message, and date. The model has a form connected to it.
 
 ## Features
 ### Shop
@@ -81,21 +88,27 @@ Below the items there is information about the delivery cost, the product cost, 
 ### Wishlist
 
 ### Checkout
+The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and the payment options. At the bottom of the page, there is a button for placing the order, and a button for going back to the shopping bag (there is also one at the top).
 
 ### Articles
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph) and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
 
 ### Contact us
-
+This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin.
 
 ### Messages
 
 ### Admin
 The admin can add, edit and remove products thru the admin page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories. The same goes for the articles.
 
+Products, articles and the messages from users can be accessed from the frontend.
+
 ### Potential Features
 - If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
+
+## Requirements file
+This is the content of the requirements file, which explains what needs to be installed in order to run the code.
 
 ## Testing
 
@@ -201,6 +214,6 @@ For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/
 Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
 
 ### Content and Media
-All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
+When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
 
 Erik Vodopivec Forsman, 2022
