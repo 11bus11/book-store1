@@ -161,6 +161,7 @@ The website was tested on these browsers:
 - Made sure the search bar works by searching for words found in book titles, descriptions, languages and authors. The expected results were showed.
 - While implementing the add-to-bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
 - For the remove-from-bag functionality, I tested if it worked in the same way I did the add-to-bag function.
+- The checkout system was tested in much the same way. the only difference was that i had to make sure it was not possible to access it with an empty shopping bag. I did that by trying to go to the checkout wkthout anything in the bag, and making sure I got sent back to the bag right away.
 
 ### Software Testing
 #### JavaScript Testing - Jest
@@ -174,6 +175,7 @@ The website was tested on these browsers:
 
 #### Unfixed bugs
 - It is possible to add more products than there is in stock to the bag. If you do all you get is a message saying you added a higher amount than the current stock and that the shipping of these products will be delayed due to this.
+- If there is an image url, which does not work, the website will not show the substitution image. This is because the if-statememt only checks if there is an image url, not if it acctually works. the reason for this bug existing is time constraints. I prioritised larger issues before this. 
 
 ### Deployment
 This project was deployed with Heroku.
