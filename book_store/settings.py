@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 if os.path.isfile("env.py"):
     import env
@@ -23,8 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h^39w=j=ot(7k^04r7ri1tn!jn37k(g735fy@+cnonhpb)ee3u'
-
-DATABASE_URL = 'postgres://zaomcijv:paoBdM5_9aU7B-ssqFHhzxEa7gT9f9rz@surus.db.elephantsql.com/zaomcijv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -114,10 +113,11 @@ WSGI_APPLICATION = 'book_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
