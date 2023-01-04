@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_header %}Products management{% endblock %}
+{% block extra_subheader %}Admin - Products{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <section class="py-5">
+       <div class="container">
+            <div class="col">
+                <!-- About us card -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <p class="text-muted">Please fill out the form below to complete your order</p>
+                            <form action="{% url 'add_article' %}" method="POST" id="article-form">
+                                {% csrf_token %}
+                                <fieldset class="rounded px-3 mb-5">
+                                    <legend class="fieldset-label small text-black px-2 w-auto">Add product</legend> <br>
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+       </div>
+    </section>  
+    
+
+{% endblock %} 

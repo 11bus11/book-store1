@@ -69,8 +69,8 @@
                             <p class="text-muted fw-bold mb-0">Account</p>
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Management</a>
-                            <a href="" class="dropdown-item">Article Management</a>
+                            <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
+                            <a href="{% url 'add_articles' %}" class="dropdown-item">Article Management</a>
                             <a href="" class="dropdown-item">Messages</a>
                             <hr class="dropdown-divider">
                             {% endif %}

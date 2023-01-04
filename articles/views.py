@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 
 from .models import Article
-#from .forms import ProductForm
+from .forms import ArticleForm
 
 
 def articles(request):
@@ -33,3 +33,13 @@ def article_full(request, article_id):
         }
 
     return render(request, 'articles/article_full.html', context)
+
+def add_articles(request):
+    """ Adding a product to store (admin)"""
+    form = ArticleForm()
+    template = 'articles/add:articles.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
