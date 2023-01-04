@@ -1,6 +1,7 @@
-*
+/*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
+
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
@@ -12,7 +13,7 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: '#000',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontFamily: '"Istok Web", sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
@@ -32,9 +33,6 @@ card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
-            <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-            </span>
             <span>${event.error.message}</span>
         `;
         $(errorDiv).html(html);
@@ -62,6 +60,7 @@ form.addEventListener('submit', function(ev) {
         'save_info': saveInfo,
     };
     var url = '/checkout/cache_checkout_data/';
+
 
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
@@ -92,13 +91,11 @@ form.addEventListener('submit', function(ev) {
                     state: $.trim(form.county.value),
                 }
             },
+
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
-                    <span class="icon" role="alert">
-                    <i class="fas fa-times"></i>
-                    </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
                 $('#payment-form').fadeToggle(100);
@@ -108,6 +105,7 @@ form.addEventListener('submit', function(ev) {
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
+                    console.log("yes")
                 }
             }
         });

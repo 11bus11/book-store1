@@ -37,6 +37,10 @@
     border: 1px solid #000;
 }
 
+#card-element {
+    border-radius: 2%;
+}
+
 select,
 select option {
     color: #000000;
@@ -64,8 +68,4 @@ select option[value=""] {
     justify-content: center;
     margin: 0;
     height: 100%;
-}
-
-#card-element {
-    padding: 20px;
 }
