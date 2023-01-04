@@ -1,0 +1,37 @@
+% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra_header %}Order placed{% endblock %}
+{% block extra_subheader %}See order confirmation below{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="col-12">
+                <div class="row">
+                    <h2>Thank you!</h2>
+                    <p>An email will be sent to <strong>{{ order.email }}</strong>.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{% url 'home' %}">
+                        <button class="btn btn-outline-dark text-decoration-none mb-4">
+                            Starting page
+                        </button>
+                    </a>
+                    <p class="text-black">Order Summary ({{ product_count }})</p>
+                    <div class="row col-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %} 
