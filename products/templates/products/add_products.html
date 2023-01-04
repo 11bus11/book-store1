@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_header %}Buy books online!{% endblock %}
-{% block extra_subheader %}Find the books you need at Dino's{% endblock %}
+{% block extra_header %}Products management{% endblock %}
+{% block extra_subheader %}Admin - Products{% endblock %}
 
 {% block content %}
     <!-- Content -->
@@ -11,42 +11,26 @@
             <div class="col">
                 <!-- About us card -->
                 <div class="row">
-                    <div class="card mb-5 ">
-                        <div class="card-body">
-                            <div class="d-md-flex d-md-inline">
-                                <img class="col-12 col-md-5" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
-                                <div class=" row col-12 col-md-4 m-3" >
-                                    <h2>About us!</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis dolores nesciunt labore cum magni minus molestias amet! Atque mollitia fugiat voluptates assumenda iusto repellendus fugit esse blanditiis labore facere!</p>
-                                    <p>//Dino and Erik</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Message form -->
-                <div class="row">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="{% url 'home' %}" method="POST" id="contact-form">
+                    <div class="col-12">
+                        <div class="row">
+                            <form action="{% url 'add_products' %}" method="POST" id="product-form" class="form mb-5" encrypte="multipart/form-data">
                                 {% csrf_token %}
-                                <fieldset class="rounded px-3 mb-5">
-                                    <p class="fw-bold mb-0">Send us a message!</p> <br>
-                                    {{ contact_form.name }}
-                                    {{ contact_form.email }}
-                                </fieldset>
-                                <fieldset class="rounded px-3 mb-5" id="message-field">
-                                    {{ contact_form.message }}
-                                </fieldset>
+                                <h2>Add products - form</h2>
+                                {% for field in form %}
+                                    <p class="mb-0 mt-2">{{ field.name }}:</p>{{ field }}
+                                {% endfor %}
+                                <br>
+                                <div class="mt-4">
+                                    <div class="btn btn-success" type="submit">Add product</div>
+                                    <a href="{% url 'products' %}"><div class="btn btn-outline-dark">Products page</div></a>
+                                </div>
+                                
                             </form>
-                            <button class="btn btn-outline-dark mt-3 justify-content-center">Send message</button>
+
                         </div>
                     </div>
                 </div> 
             </div>
        </div>
     </section>  
-    
-
-{% endblock %} 
+{% endblock %}

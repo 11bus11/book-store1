@@ -34,10 +34,11 @@ def article_full(request, article_id):
 
     return render(request, 'articles/article_full.html', context)
 
+
 def add_articles(request):
     """ Adding a product to store (admin)"""
     form = ArticleForm()
-    template = 'articles/add:articles.html'
+    template = 'articles/add_articles.html'
     context = {
         'form': form,
     }
