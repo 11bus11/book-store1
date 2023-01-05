@@ -1,10 +1,10 @@
 from django import forms
-from .models import Contact
+from .models import Message
 
 
-class ContactForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
     class Meta:
-        model = Contact
+        model = Message
         fields = ('name', 'email', 'message',)
 
     def __init__(self, *args, **kwargs):

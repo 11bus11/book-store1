@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_header %}Products management{% endblock %}
+{% block extra_subheader %}Admin - Products{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <section class="py-5">
+       <div class="container">
+            <div class="col">
+                <!-- About us card -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+
+                                
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Message</th>
+                                        </tr>
+                                    </thead>
+                                    {% for message in messages %}
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ message.date }}</td>
+                                        <td>{{ message.name }}</td>
+                                        <td>{{ message.email }}</td>
+                                        <td>{{ message.message }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                {% endfor %}
+                                <br>
+
+
+                                <a href="{% url 'articles' %}"><div class="btn btn-outline-dark">Articles page</div></a>
+
+
+
+                        </div>
+                    </div>
+                </div> 
+            </div>
+       </div>
+    </section>  
+    
+
+{% endblock %} 
