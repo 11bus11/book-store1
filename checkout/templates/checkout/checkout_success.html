@@ -34,11 +34,9 @@
                         </tbody>
                         {% endfor %}
                     </table>
-
-                    
-
-                    
+                    <p>Total cost (with shipping): {{order.grand_total}}</p>
                 </div>
+                <div class="row"></div>
                 <a href="{% url 'home' %}">
                     <button class="btn btn-outline-dark text-decoration-none mb-4">
                         Home page
