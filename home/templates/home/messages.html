@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_header %}Products management{% endblock %}
-{% block extra_subheader %}Admin - Products{% endblock %}
+{% block extra_header %}Messages{% endblock %}
+{% block extra_subheader %}Admin - See messages{% endblock %}
 
 {% block content %}
     <!-- Content -->
@@ -14,32 +14,31 @@
                     <div class="col-12">
                         <div class="row">
 
-                                
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Message</th>
-                                        </tr>
-                                    </thead>
-                                    {% for message in messages %}
-                                    <tbody>
+                            
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Message</th>
+                                    </tr>
+                                </thead>
+                                {% for message in messages %}
+                                <tbody>
                                     <tr>
                                         <td>{{ message.date }}</td>
                                         <td>{{ message.name }}</td>
                                         <td>{{ message.email }}</td>
                                         <td>{{ message.message }}</td>
                                     </tr>
-                                    </tbody>
-                                </table>
-
+                                </tbody>
                                 {% endfor %}
-                                <br>
+                            </table>
 
 
-                                <a href="{% url 'articles' %}"><div class="btn btn-outline-dark">Articles page</div></a>
+
+                                <a href="{% url 'articles' %}"><div class="btn btn-outline-dark">Home page</div></a>
 
 
 

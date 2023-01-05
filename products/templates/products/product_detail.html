@@ -42,7 +42,7 @@
                                         <div class="form-group col-5 col-md-2">
                                             <div class="input-group input-group-{{ product.id }}">
                                                 <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                                    name="quantity" value="1" min="1" max="{{ product.stock }}"
+                                                    name="quantity" value="1" min="1" max="99"
                                                     data-item_id="{{ product.id }}">
                                             </div>
                                         </div>
@@ -61,11 +61,6 @@
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
                             </form>
-    
-                            {% if request.user.is_authenticated %}
-                            <button class="btn btn-outline-dark mt-auto mr-2" href="#">Add to wishlist</button>
-                            {% endif %}
-
                         </div>
                         
                     </div>
