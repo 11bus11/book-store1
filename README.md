@@ -18,6 +18,7 @@ Site user:
 - Search for products.
 - Navigate categories and get relevant results.
 - Pay for products.
+- Write reviews
 
 Admin user:
 - Add/edit/remove products.
@@ -57,10 +58,10 @@ The "article" models the name of the article, the author, the date it was last e
 ### Checkout
 When placing an order the checkout model will be used. It has both writable and non-writable object, depending on if the user needs to provide information or not.
 
-### Wishlist
+### Review
 
-### Contact
-The contact model is used for the contact form on the home page. It contains name, e-mail, message, and date. The model has a form connected to it.
+### Messages
+The messages model is used for the contact form on the home page. It contains name, e-mail, message, and date. The model has a form connected to it.
 
 ## Features
 ### Shop
@@ -94,9 +95,10 @@ The checkout is where the user acctually places their order. It has a summary of
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph) and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
 
 ### Contact us
-This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin.
+This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It used the messages model.
 
-### Messages
+### Toasts
+When a user does someting that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, eroor, success and info. Depending on what message is returned, a different toast is shown.
 
 ### Admin
 The admin can add, edit and remove products thru the admin page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories. The same goes for the articles.
@@ -106,6 +108,7 @@ Products, articles and the messages from users can be accessed from the frontend
 ### Potential Features
 - If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
+- Another thing that would be nice to have is the ability for the user to pay thru Swish or Klarna.
 
 ## Requirements file
 This is the content of the requirements file, which explains what needs to be installed in order to run the code.
@@ -125,6 +128,7 @@ Site user:
 - Navigate categories and get relevant results.
     In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
 - Pay for products.
+- Write reviews
 
 Admin user:
 - Add/edit/remove products.
@@ -161,7 +165,8 @@ The website was tested on these browsers:
 - Made sure the search bar works by searching for words found in book titles, descriptions, languages and authors. The expected results were showed.
 - While implementing the add-to-bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
 - For the remove-from-bag functionality, I tested if it worked in the same way I did the add-to-bag function.
-- The checkout system was tested in much the same way. the only difference was that i had to make sure it was not possible to access it with an empty shopping bag. I did that by trying to go to the checkout wkthout anything in the bag, and making sure I got sent back to the bag right away.
+- The checkout delivery forms system was tested in much the same way. the only difference was that i had to make sure it was not possible to access it with an empty shopping bag. I did that by trying to go to the checkout wkthout anything in the bag, and making sure I got sent back to the bag right away.
+- The payment system was tested by making trial payments with the Stripe "test card". This card number is used for making test payments. Se the info about test payments [here](). After making the test payment, I checked on the dashboard to see if it went thru without issues or, if not, what the issue was.
 
 ### Software Testing
 #### JavaScript Testing - Jest
