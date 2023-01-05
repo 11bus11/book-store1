@@ -1,4 +1,4 @@
-% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block extra_css %}
@@ -13,23 +13,37 @@
     <section class="py-5">
         <div class="container">
             <div class="col-12">
-                <div class="row">
+                <div class="row text-center">
                     <h2>Thank you!</h2>
                     <p>An email will be sent to <strong>{{ order.email }}</strong>.</p>
+                    <p>Your order number is: {{ order.order_number }}</p>
+                    <p></p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <a href="{% url 'home' %}">
-                        <button class="btn btn-outline-dark text-decoration-none mb-4">
-                            Starting page
-                        </button>
-                    </a>
-                    <p class="text-black">Order Summary ({{ product_count }})</p>
-                    <div class="row col-12">
-                        
-                    </div>
+                <div class="row col-12 ">
+                    <table class="table">
+                        <thead>
+                            <th>Product name</th>
+                            <th>Quantity</th>
+                            <th>Price per item</th>
+                        </thead>
+                        {% for item in order.lineitems.all %}
+                        <tbody>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.product.price }}kr</td>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+
+                    
+
+                    
                 </div>
+                <a href="{% url 'home' %}">
+                    <button class="btn btn-outline-dark text-decoration-none mb-4">
+                        Home page
+                    </button>
+                </a>
             </div>
         </div>
     </section>
