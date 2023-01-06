@@ -8,6 +8,7 @@ django-crispy-forms==1.14.0
 Flask==2.2.2
 Flask-SQLAlchemy==2.5.1
 greenlet==2.0.1
+gunicorn==20.1.0
 itsdangerous==2.1.2
 oauthlib==3.2.2
 Pillow==9.3.0

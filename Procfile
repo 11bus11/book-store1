@@ -1,1 +1,1 @@
-web: python run.py
+web: gunicorn book_store.wsgi:application
