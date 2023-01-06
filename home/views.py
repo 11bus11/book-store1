@@ -18,13 +18,25 @@ def index(request):
 
     return render(request, template, context)
 
+
 def messages(request):
-    """view that shows the full article."""
+    """ Add a product to the store """
+    if request.method == 'POST':
+        form = MessageForm(request.POST, request.FILES)
+        if form.is_valid():
+            message = form.save()
+            messages.success(request, 'Successfully sent message!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request,
+                           ('Failed to send message. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = MessageForm()
 
-    message = Message.message
-
+    template = 'index.html'
     context = {
-            'message': message,
-        }
+        'form': form,
+    }
 
-    return render(request, 'home/messages.html', context)
+    return render(request, template, context)

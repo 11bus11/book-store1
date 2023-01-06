@@ -29,18 +29,18 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{% url 'home' %}" method="POST" id="contact-form">
+                            <form action="{% url 'home' %}" method="POST" id="message-form" class="form mb-5">
                                 {% csrf_token %}
-                                <fieldset class="rounded px-3 mb-5">
-                                    <p class="fw-bold mb-0">Send us a message!</p> <br>
-                                    {{ message_form.name }}
-                                    {{ message_form.email }}
-                                </fieldset>
-                                <fieldset class="rounded px-3 mb-5" id="message-field">
-                                    {{ message_form.message }}
-                                </fieldset>
+                                <h2>Send us a message!</h2>
+                                {% for field in form %}
+                                    {{ field }}
+                                {% endfor %}
+                                <div class="mt-4">
+                                    <button class="btn btn-success" type="submit">Send message</button>
+                                    <a href="{% url 'products' %}"><div class="btn btn-outline-dark">Products page</div></a>
+                                </div>
+                                
                             </form>
-                            <button class="btn btn-outline-dark mt-3 justify-content-center">Send message</button>
                         </div>
                     </div>
                 </div> 
