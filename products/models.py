@@ -1,5 +1,6 @@
 from django.db import models
 
+SCORE_CHOICES = ((0, "1"), (1, "2"), (2, "3"), (3, "4"), (4, "5"))
 
 class Category(models.Model):
     class Meta:
@@ -26,3 +27,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    product = models.ForeignKey('Product', null=True, blank=True, on_delete=models.CASCADE)
+    score = models.IntegerField(choices=SCORE_CHOICES, default=4)
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.product
