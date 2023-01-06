@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <form action="{% url 'send_messages' %}" method="POST" id="message-form" class="form mb-5">
                                 {% csrf_token %}
-                                <fieldset class="rounded px-3 mb-5">
+                                <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
                                     <legend class="fieldset-label text-black px-2 w-auto">Send us a message!</legend> <br>
                                     {{ message_form }}
                                 </fieldset>

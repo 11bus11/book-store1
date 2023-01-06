@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -45,12 +45,32 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-
     context = {
             'product': product,
         }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def review(request):
+    """ Send message to store owner (admin) """
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            review = form.save()
+            messages.success(request, 'Successfully sent message!')
+        else:
+            messages.error(request,
+                           ('Failed to send message. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = ReviewForm()
+
+    context = {
+        'form': form,
+    }
+
+    return redirect('products')
 
 
 @login_required

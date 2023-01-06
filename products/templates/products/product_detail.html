@@ -64,9 +64,21 @@
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
                             </form>
-                        </div>
-                        
+                        </div>  
                     </div>
+                </div>
+                <div class="row col-10">
+                    <form action="{% url 'reviews' %}" method="POST" id="review-form" class="form mb-5">
+                        {% csrf_token %}
+                        <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
+                            <legend class="fieldset-label text-muted small px-2 w-auto">Send us a message!</legend> <br>
+                            {{ form }}
+                        </fieldset>
+                        <div class="mt-4">
+                            <button class="btn btn-success" type="submit">Send message</button>
+                            <a href="{% url 'products' %}"><div class="btn btn-outline-dark">Products page</div></a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

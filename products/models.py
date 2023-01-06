@@ -30,9 +30,12 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    class Meta:
+        verbose_name_plural = 'Reviews'
+
     product = models.ForeignKey('Product', null=True, blank=True, on_delete=models.CASCADE)
     score = models.IntegerField(choices=SCORE_CHOICES, default=4)
     name = models.CharField(max_length=254)
 
-    def __str__(self):
-        return self.product
+    def __name__(self):
+        return self.name
