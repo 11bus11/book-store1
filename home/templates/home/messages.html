@@ -18,7 +18,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Date</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Message</th>
@@ -27,7 +26,6 @@
                                 {% for message in messages %}
                                 <tbody>
                                     <tr>
-                                        <td>{{ message.date }}</td>
                                         <td>{{ message.name }}</td>
                                         <td>{{ message.email }}</td>
                                         <td>{{ message.message }}</td>
@@ -35,13 +33,7 @@
                                 </tbody>
                                 {% endfor %}
                             </table>
-
-
-
-                                <a href="{% url 'articles' %}"><div class="btn btn-outline-dark">Home page</div></a>
-
-
-
+                            <a href="{% url 'home' %}"><div class="btn btn-outline-dark">Home page</div></a>
                         </div>
                     </div>
                 </div> 

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from .forms import MessageForm
@@ -20,13 +20,26 @@ def index(request):
 
 
 def messages(request):
-    """ Add a product to the store """
+    """view that returns index page"""
+
+    messages = Message.objects.all()
+    form = MessageForm()
+    template = 'home/messages.html'
+    context = {
+        'form': form,
+        'messages': messages,
+    }
+
+    return render(request, template, context)
+    
+
+def send_message(request):
+    """ Send message to store owner (admin) """
     if request.method == 'POST':
         form = MessageForm(request.POST, request.FILES)
         if form.is_valid():
             message = form.save()
             messages.success(request, 'Successfully sent message!')
-            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request,
                            ('Failed to send message. '
@@ -34,9 +47,4 @@ def messages(request):
     else:
         form = MessageForm()
 
-    template = 'index.html'
-    context = {
-        'form': form,
-    }
-
-    return render(request, template, context)
+    return redirect(reverse('home'))

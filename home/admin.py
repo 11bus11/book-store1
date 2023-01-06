@@ -3,11 +3,11 @@ from .models import Message
 
 
 class MessageAdmin(admin.ModelAdmin):
-    fields = ('date', 'name', 'email', 'message',)
+    fields = ('name', 'email', 'message',)
 
-    list_display = ('date', 'name', 'email', 'message',)
+    list_display = ('name', 'email', 'message',)
 
-    ordering = ('-date',)
+    ordering = ('-id',)
 
 
 admin.site.register(Message, MessageAdmin)
