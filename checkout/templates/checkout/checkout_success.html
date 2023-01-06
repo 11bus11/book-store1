@@ -36,12 +36,20 @@
                     </table>
                     <p>Total cost (with shipping): {{order.grand_total}}</p>
                 </div>
-                <div class="row"></div>
-                <a href="{% url 'home' %}">
-                    <button class="btn btn-outline-dark text-decoration-none mb-4">
-                        Home page
-                    </button>
-                </a>
+                <div class="row">
+                    {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-outline-dark my-2">
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'home' %}">
+                        <button class="btn btn-outline-dark text-decoration-none mb-4">
+                            Home page
+                        </button>
+                    </a>
+                    {% endif %}
+                </div>
+                
             </div>
         </div>
     </section>
