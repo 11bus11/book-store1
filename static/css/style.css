@@ -54,7 +54,8 @@ footer {
 
 .StripeElement,
 .stripe-style-input, 
-#profie-update-form, {
+#profie-update-form,
+input {
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
