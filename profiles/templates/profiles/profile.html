@@ -13,9 +13,19 @@
     <!-- Content -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-
+            <div class="col d-md-flex d-inline-item">
+                <div class="row col-10 col-md-5">
+                    <p class="text-muted mt-2">User information</p>
+                    <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                        {% csrf_token %}
+                        {{ form }}
+                        <br>
+                        <button class="btn btn-success mt-2">Save information</button>
+                    </form>
+                </div>
+                <div class="row col-10 col-md-5">
+                    <p class="text-muted mt-2">Order history</p>
+                    {{ orders }}
                 </div>
             </div>
         </div>

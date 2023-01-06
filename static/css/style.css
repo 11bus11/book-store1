@@ -10,6 +10,7 @@
 
 nav {
     background-color: var(--light-green);
+    width: 100vw;
 }
 
 .navbar-brand, .header-text {
@@ -22,6 +23,11 @@ nav {
 
 .page-header {
     background-color: var(--dark-green);
+}
+
+footer {
+    width: 100vw;
+    margin-left: 0;
 }
 
 
@@ -47,7 +53,7 @@ nav {
 
 
 .StripeElement,
-.stripe-style-input {
+.stripe-style-input, {
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
