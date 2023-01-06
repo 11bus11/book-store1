@@ -29,7 +29,7 @@
                         <p class="mb-2 text-muted">{{ product.author }}</p>
                         <div>
                             <a href="{% url 'edit_products' product.id %}"><button class="btn btn-outline-dark">Edit</button></a>
-                            <a href=""><button class="btn btn-danger">Delete</button></a>
+                            <a href="{% url 'delete_products' product.id %}"><button class="btn btn-danger">Delete</button></a>
                         </div>
                         <p class="lead mb-2 text-left font-weight-bold">{{ product.price }}kr</p>
                         <p class="mb-0 text-left font-weight-normal">{{ product.description }}</p>
