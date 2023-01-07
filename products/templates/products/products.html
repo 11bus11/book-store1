@@ -21,6 +21,14 @@
                     <a class="mt-2" href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top" src="{{MEDIA_URL}}/books/{{ product.image_place }}" alt="{{ product.name }}"/>
                     </a>
+                    {% elif product.image_url %}
+                    <a class="mt-2" href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top" src="{{MEDIA_URL}}/books/{{ product.image_url }}" alt="{{ product.name }}"/>
+                    </a>
+                    {% elif product.image %}
+                    <a class="mt-2" href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top" src="{{MEDIA_URL}}/books/{{ product.image }}" alt="{{ product.name }}"/>
+                    </a>
                     {% else %}
                     <a class="mt-2" href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top" src="{{MEDIA_URL}}noimage.PNG" alt="{{ product.name }}"/>
