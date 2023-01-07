@@ -59,12 +59,11 @@
                         <li>
                             <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion" class="dropdown-item">Shop</a>
                         </li>
-                        <li><hr class="dropdown-divider"></li>
                         <li>
                             {% if request.user.is_authenticated %}
+                            <hr class="dropdown-divider">
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
-                            <a href="{% url 'add_articles' %}" class="dropdown-item">Article Management</a>
                             <a href="{% url 'messages' %}" class="dropdown-item">Messages</a>
                             <hr class="dropdown-divider">
                             {% endif %}
@@ -127,7 +126,6 @@
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                     <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
-                                    <a href="{% url 'add_articles' %}" class="dropdown-item">Article Management</a>
                                     <a href="{% url 'messages' %}" class="dropdown-item">Messages</a>
                                     <hr class="dropdown-divider">
                                     {% endif %}
@@ -152,7 +150,7 @@
                         </div>
                     </div>
                 </form>
-                <form class="d-flex d-none d-md-block">
+                <form class="d-flex d-none d-lg-block">
                     <button class="btn btn-outline-dark " type="submit">
                         <a class="text-black text-decoration-none" href="{% url 'bag' %}">
                         Bag
