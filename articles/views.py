@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.db.models import Q
 
 from .models import Article
-from .forms import ArticleForm
 
 
 def articles(request):
