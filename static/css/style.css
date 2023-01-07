@@ -67,3 +67,8 @@ input {
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 }
+
+img {
+    width: 100;
+    height: auto;
+}
