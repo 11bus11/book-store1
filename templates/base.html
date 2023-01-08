@@ -57,7 +57,7 @@
                     <!-- Dropdown menu links -->
                         <li class="nav-item"><a class="nav-link text-black" href="{% url 'articles' %}">Articles</a></li>
                         <li>
-                            <a href="{% url 'prodcts' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion" class="dropdown-item">Shop</a>
+                            <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion" class="dropdown-item">Shop</a>
                         </li>
                         <li>
                             {% if request.user.is_authenticated %}
