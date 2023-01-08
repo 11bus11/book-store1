@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="card mb-5 ">
                         <div class="card-body">
-                            <div class="d-md-flex d-md-inline">
+                            <div class="d-lg-flex d-lg-inline">
                                 <img class="col-12 col-md-5 img-fluid" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
                                 <div class=" row col-12 col-md-4 m-3" >
                                     <h2>About us!</h2>
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{% url 'send_messages' %}" method="POST" id="message-form" class="form mb-5">
+                            <form class="col-8" action="{% url 'send_messages' %}" method="POST" id="message-form" class="form mb-5">
                                 {% csrf_token %}
                                 <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
                                     <legend class="fieldset-label text-black px-2 w-auto">Send us a message!</legend> <br>
