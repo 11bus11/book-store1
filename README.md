@@ -37,10 +37,11 @@ I chose to make this e-store in blue- green shades. These colours were chosen du
 #### Structure
 I chose to create a simple structure, since the products are the thing that should attract attention. All products have a green background in the photos. This is so that they fit into the colour-palette while also attracting attention. Right below the navigation bar there is a darker field telling the user the name of the page. 
 
-The base of the website is a simple navigation-bar with dropdown menues for products and accounts, and links for articles and home. These menues are in a dropdown-menue on the mobile version. I chose to place the search bar right below the dropdown menue and brand-name on the mobile view. That way there is no need to open a dropdown just to search for a product.
+The base of the website is a simple navigation-bar with dropdown menues for products and accounts, and links for articles and home. These menues are in a dropdown-menue on the mobile version. I chose to place the search bar right below the dropdown menue and brand-name on the mobile view. That way there is no need to open a dropdown just to search for a product. The nav for medium screens are the same as the one for mobile, but with everything on one row.
 
-![Desktop nav]()
-![Mobile nav]()
+![Nav - large screen](misc/nav-lg.PNG)
+![Nav - medium screen](misc/nav-md.PNG)
+![Nav - small screen](misc/nav-sm.PNG)
 
 #### Typography
 I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Istok Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
