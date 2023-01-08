@@ -14,10 +14,10 @@
                     <div class="card mb-5 ">
                         <div class="card-body">
                             <div class="d-lg-flex d-lg-inline">
-                                <img class="col-12 col-md-5 img-fluid" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
-                                <div class=" row col-12 col-md-4 m-3" >
+                                <img class="col-12 col-lg-5 img-fluid" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
+                                <div class=" row col-12 col-lg-4 m-3" >
                                     <h2>About us!</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque nobis dolores nesciunt labore cum magni minus molestias amet! Atque mollitia fugiat voluptates assumenda iusto repellendus fugit esse blanditiis labore facere!</p>
+                                    <p>This is a simple online book store with a small selection of books. It is called Dino's book store, after my cat.</p>
                                     <p>//Dino and Erik</p>
                                 </div>
                             </div>
@@ -37,9 +37,13 @@
                                 </fieldset>
                                 <div class="mt-4">
                                     <button class="btn btn-success" type="submit">Send message</button>
-                                    <a href="{% url 'products' %}"><div class="btn btn-outline-dark">Products page</div></a>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          Sign up for our newsletter!
+                                        </label>
+                                    </div>                                      
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
