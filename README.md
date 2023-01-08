@@ -210,7 +210,100 @@ The database is on ElephantSQL.
 - Preview the information to make sure everything is correct.
 - Create instance.
 - Click on your instance to see the information. 
-- Copy the url and add it
+- Copy the url and add it to the Config Vars as DATABASE_URL.
+- Add the following code instead of the earlier database settings (in settings.py:
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+- Go to elephantSQL and go to teh "BROWSER" tab. Choose auth_user from table querries. Then click execute.
+
+For the static files I used AWS S3:
+
+   - Create an Amazon AWS account
+   - Search for S3 and create a new bucket
+       - Allow public access
+   - Under Properties > Static website hosting
+        Enable
+        index.html as index.html
+        save
+    Under Permissions > CORS copy the following:
+
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+
+    Under Permissions > Bucket Policy:
+        Generate Bucket Policy and take note of Bucket ARN
+        Chose S3 Bucket Policy as Type of Policy
+        For Principal, enter *
+        Enter ARN noted above
+        Add Statement
+        Generate Policy
+        Copy Policy JSON Document
+        Paste policy into Edit Bucket policy on the previous tab
+        Save changes
+    Under Access Control List (ACL):
+        For Everyone (public access), tick List
+        Accept that everyone in the world may access the Bucket
+        Save changes
+
+AWS IAM (Identity and Access Management) setup
+
+    From the IAM dashboard within AWS, select User Groups:
+        Create a new group
+        Click through and Create Group
+    Select Policies:
+        Create policy
+        Under JSON tab, click Import managed policy
+        Choose AmazongS3FullAccess
+        Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+        Click next step and go to Review policy
+        Give the policy a name and description of your choice
+        Create policy
+    Go back to User Groups and choose the group created earlier
+        Under Permissions > Add permissions, choose Attach Policies and select the one just created
+        Add permissions
+    Under Users:
+        Choose a user name
+        Select Programmatic access as the Access type
+        Click Next
+        Add the user to the Group just created
+        Click Next and Create User
+    Download the .csv containing the access key and secret access key.
+        THE .csv FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN.
+
+Connecting Heroku to AWS S3
+
+    Install boto3 and django-storages
+
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+
+    Add the values from the .csv you downloaded to your Heroku Config Vars under Settings:
+    Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
+    With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+        PLEASE MAKE SURE media AND static FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS
+
 
 ## Credits
 ### Code
