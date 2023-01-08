@@ -47,9 +47,9 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container px-4 px-lg-5 choices-nav">
-                <a class="navbar-brand col-8 col-md-3 text-center" href="{% url 'home' %}">Dino's book-store</a>
+                <a class="navbar-brand col-8 col-sm-3 text-center" href="{% url 'home' %}">Dino's book-store</a>
                 <!-- Mobile navigation (dropdown) -->
-                <div class="btn-group dropdown d-block d-md-none">
+                <div class="btn-group dropdown d-block d-lg-none">
                     <button type="button" class="btn btn-secondary dropdown-toggle mb-2 mt-2" data-bs-toggle="dropdown" aria-expanded="false">
                     Menu
                     </button>
@@ -140,7 +140,7 @@
                         </li>
                     </ul>
                 </div>
-                <form class="content-align-center" method="GET" action="{% url 'products' %}">
+                <form class="mr-0 ml-0" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
@@ -164,53 +164,6 @@
                         </a>
                     </button>
                 </form>
-            </div>
-
-            <!-- Ipad navigation -->
-            <div class="btn-group dropdown d-none d-md-block d-lg-none">
-                <button type="button" class="btn btn-secondary dropdown-toggle mb-2 mt-2" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                <!-- Dropdown menu links -->
-                    <li class="nav-item"><a class="nav-link text-black" href="{% url 'articles' %}">Articles</a></li>
-                    <li>
-                        <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion" class="dropdown-item">Shop</a>
-                    </li>
-                    <li>
-                        {% if request.user.is_authenticated %}
-                        <hr class="dropdown-divider">
-                        {% if request.user.is_superuser %}
-                        <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
-                        <a href="{% url 'messages' %}" class="dropdown-item">Messages</a>
-                        <hr class="dropdown-divider">
-                        {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                        <form class="d-flex">
-                            <button class="btn btn-outline-dark " type="submit">
-                                <a class="text-black text-decoration-none" href="{% url 'bag' %}">
-                                <i class="bi-cart-fill me-1"></i>
-                                Bag
-                                <span class="badge bg-dark text-white ms-1 rounded-pill">
-                                    {% if grand_total %}
-                                        {{ grand_total|floatformat:2 }}kr
-                                    {% else %}
-                                        0,00kr
-                                    {% endif %}
-                                </span>
-                                </a>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
             </div>
         </nav>
         <!-- Header-->
