@@ -1,6 +1,8 @@
 # E-shop - Book store
 This is a store i created for my 5th project in the Code Institute Software Development Course. It is a simple book store with a small selection of books. It is called Dino's book store, after my cat. 
 
+[live site](https://book-store-ci.herokuapp.com/)
+
 ## Creator goals
 - Create a functioning e-commerse website with a search bar.
 - Making it possible to add products and articles from the front-end.
@@ -315,6 +317,6 @@ For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/
 Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
 
 ### Content and Media
-When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site]() on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
+When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site](https://book-store-ci.herokuapp.com/) on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
 
 Erik Vodopivec Forsman, 2022
