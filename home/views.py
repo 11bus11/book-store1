@@ -19,19 +19,19 @@ def index(request):
     return render(request, template, context)
 
 
-def messages(request):
+def message_view(request):
     """view that returns index page"""
 
-    messages = Message.objects.all()
+    message = Message.objects.all()
     form = MessageForm()
     template = 'home/messages.html'
     context = {
         'form': form,
-        'messages': messages,
+        'message': message,
     }
 
     return render(request, template, context)
-    
+
 
 def send_message(request):
     """ Send message to store owner (admin) """

@@ -64,7 +64,7 @@
                             <hr class="dropdown-divider">
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
-                            <a href="{% url 'messages' %}" class="dropdown-item">Messages</a>
+                            <a href="{% url 'message' %}" class="dropdown-item">Messages</a>
                             <hr class="dropdown-divider">
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
@@ -126,7 +126,7 @@
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                     <a href="{% url 'add_products' %}" class="dropdown-item">Product Management</a>
-                                    <a href="{% url 'messages' %}" class="dropdown-item">Messages</a>
+                                    <a href="{% url 'message' %}" class="dropdown-item">Messages</a>
                                     <hr class="dropdown-divider">
                                     {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
