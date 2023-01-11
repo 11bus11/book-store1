@@ -44,9 +44,11 @@ def product_detail(request, product_id):
     """view that shows product details for chosen product."""
 
     product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm(request.POST, request.FILES)
 
     context = {
             'product': product,
+            'form': form,
         }
 
     return render(request, 'products/product_detail.html', context)
@@ -58,10 +60,10 @@ def review(request):
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save()
-            messages.success(request, 'Successfully sent message!')
+            messages.success(request, 'Successfully published review!')
         else:
             messages.error(request,
-                           ('Failed to send message. '
+                           ('Failed to publish review. '
                             'Please ensure the form is valid.'))
     else:
         form = ReviewForm()

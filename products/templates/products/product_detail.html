@@ -71,14 +71,18 @@
                     <form action="{% url 'reviews' %}" method="POST" id="review-form" class="form mb-5">
                         {% csrf_token %}
                         <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
-                            <legend class="fieldset-label text-muted small px-2 w-auto">Send us a message!</legend> <br>
-                            {{ form }}
+                            <legend class="fieldset-label text-muted small px-2 w-auto">Leave a review!</legend> <br>
+                                {% for field in form %}
+                                    {{ field }}
+                                {% endfor %}
                         </fieldset>
                         <div class="mt-4">
-                            <button class="btn btn-success" type="submit">Send message</button>
-                            <a href="{% url 'products' %}"><div class="btn btn-outline-dark">Products page</div></a>
+                            <button class="btn btn-success" type="submit">Publish</button>
                         </div>
                     </form>
+                </div>
+                <div class="row col-10">
+                <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion"><div class="btn btn-outline-dark">Products page</div></a>
                 </div>
             </div>
         </div>
