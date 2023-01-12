@@ -12,14 +12,6 @@
                 <div class="col-9">
                     <a href="{% url 'articles' %}"><div class="btn btn-outline-dark">Back to articles</div></a>
                     <p class="fw-bold">{{ article.intro }}</p>
-                    <div class="image-container my-5">
-                        <!-- Product image-->
-                        {% if article.image %}
-                        <a href="{{ article.image.url }}" target="_blank">
-                            <img class="card-img-top" src="{{ article.image.url }}" alt="{{ article.title }}"/>
-                        </a>
-                        {% endif %}
-                    </div>
                     <p>{{ article.content }}</p>
                     <p class="text-muted mb-0 mt-2">Written by: {{ article.author }}</p>
                     <p class="text-muted">Last edited: {{ article.date }}</p>

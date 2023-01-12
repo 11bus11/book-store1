@@ -54,12 +54,13 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def review(request):
+def review(request, category_id):
     """ Send message to store owner (admin) """
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save()
+            reviews = get_object_or_404(Category, pk=category_id)
             messages.success(request, 'Successfully published review!')
         else:
             messages.error(request,
@@ -70,9 +71,10 @@ def review(request):
 
     context = {
         'form': form,
+        'reviews': reviews,
     }
 
-    return redirect('products')
+    return redirect(reverse('products'))
 
 
 @login_required

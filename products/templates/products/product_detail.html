@@ -9,7 +9,7 @@
     <section class="py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6">
                     <div class="image-container my-5">
                         <!-- Product image-->
                         {% if product.image_place %}
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row col-10">
-                    <form action="{% url 'reviews' %}" method="POST" id="review-form" class="form mb-5">
+                    <form action="{% url 'reviews' category.id %}" method="POST" id="review-form" class="form mb-5">
                         {% csrf_token %}
                         <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
                             <legend class="fieldset-label text-muted small px-2 w-auto">Leave a review!</legend> <br>
@@ -81,8 +81,23 @@
                         </div>
                     </form>
                 </div>
-                <div class="row col-10">
-                <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion"><div class="btn btn-outline-dark">Products page</div></a>
+                <div class="row col-10">        
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Points</th>
+                            </tr>
+                        </thead>
+                        {% for review in review %}
+                        <tbody>
+                            <tr>
+                                <td>{{ reviews.name }}</td>
+                                <td>{{ reviews.point }}/5</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
