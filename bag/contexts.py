@@ -12,7 +12,6 @@ def bag_contents(request):
     item_total = 0
     
     
-
     bag = request.session.get('bag', {})
 
     for item_id, item_data in bag.items():
@@ -36,6 +35,8 @@ def bag_contents(request):
         grand_total = total
     else:
         grand_total = delivery + total
+
+    print(f"Grand total: {grand_total}")
 
 
     context = {
