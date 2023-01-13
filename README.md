@@ -116,8 +116,56 @@ Product management, and the messages from users can be accessed from the fronten
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
 - Another thing that would be nice to have is the ability for the user to pay thru Swish or Klarna.
 
-## Requirements file
-This is the content of the requirements file, which explains what needs to be installed in order to run the code.
+## Technologies and packages
+This is the content of the requirements file, which explains what needs to be installed in order to run the code. Some of the installed packages are not used, but were used in earlier versions.
+
+asgiref==3.6.0
+boto3==1.26.45
+botocore==1.29.45
+Brotli==1.0.9
+click==8.1.3
+dj-database-url==0.5.0
+Django==3.2
+django-allauth==0.41.0
+django-countries==7.2.1
+django-crispy-forms==1.14.0
+django-storages==1.13.2
+Flask==2.2.2
+Flask-SQLAlchemy==2.5.1
+greenlet==2.0.1
+gunicorn==20.1.0
+itsdangerous==2.1.2
+jmespath==1.0.1
+oauthlib==3.2.2
+Pillow==9.3.0
+psycopg2==2.9.5
+python3-openid==3.2.0
+pytz==2022.7
+requests-oauthlib==1.3.1
+s3transfer==0.6.0
+SQLAlchemy==1.4.45
+sqlparse==0.4.3
+stripe==2.42.0
+Werkzeug==2.2.2
+whitenoise==6.3.0
+
+### Technologies
+
+#### Languages
+- HTML
+- CSS
+- JavaScript
+- Python
+
+#### Others
+- [Bootstrap](https://getbootstrap.com/)
+    - Used to create the frontend.
+- [Django](https://www.djangoproject.com/)
+    - Fullstack framework used for this project.
+- [Stripe](https://stripe.com/se)
+    - Handles payments.
+- [AWS (S3)](https://aws.amazon.com/)
+    - Used for storing static (css and js) and media (images) files.
 
 ## Testing
 
@@ -134,7 +182,7 @@ Site user:
 - Search for products.
     - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book. Only the books with a match to the search term shows up.
 - Navigate categories and get relevant results.
-    In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
+    - In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
 - Pay for products.
     - This e-shop uses [stripe](stripe.com) for payments. The user write their card info, and stripe handles the transaction.
 - Write reviews
