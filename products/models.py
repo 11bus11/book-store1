@@ -1,6 +1,6 @@
 from django.db import models
 
-SCORE_CHOICES = ((0, "1"), (1, "2"), (2, "3"), (3, "4"), (4, "5"))
+SCORE_CHOICES = ((1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5"))
 
 
 class Category(models.Model):

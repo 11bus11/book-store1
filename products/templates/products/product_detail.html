@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row col-10">
-                    <form action="{% url 'reviews' category.id %}" method="POST" id="review-form" class="form mb-5">
+                    <form action="{% url 'product_detail' product.id %}" method="POST" id="review-form" class="form mb-5">
                         {% csrf_token %}
                         <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
                             <legend class="fieldset-label text-muted small px-2 w-auto">Leave a review!</legend> <br>
@@ -86,14 +86,14 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Points</th>
+                                <th scope="col">Score</th>
                             </tr>
                         </thead>
-                        {% for review in review %}
+                        {% for review in product.review_set.all %}
                         <tbody>
                             <tr>
-                                <td>{{ reviews.name }}</td>
-                                <td>{{ reviews.point }}/5</td>
+                                <td>{{ review.name }}</td>
+                                <td>{{ review.score }}/5</td>
                             </tr>
                         </tbody>
                         {% endfor %}
