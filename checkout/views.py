@@ -106,7 +106,7 @@ def checkout(request):
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
-        item_total = item_id.price * quantity
+        #item_total = item_id.price * quantity
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -154,6 +154,7 @@ def checkout_success(request, order_number):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
+        print(profile)
         order.user_profile = profile
         order.save()
 
