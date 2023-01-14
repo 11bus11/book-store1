@@ -74,7 +74,7 @@ The products in the shop can be shown based on their categories or the user can 
 
 There is also a search bar where users can find products. 
 
-![Shop image](misc/shop-image.PNG)
+![Shop image](misc/shop.PNG)
 
 #### Product card
 A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button there is some muted text telling the user if the item is in stock or not. 
