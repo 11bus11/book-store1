@@ -88,7 +88,7 @@ When the user clicks on the button to get more information about a product, a pa
 
 At the bottom of the product details page, the user can see a review form and reviews. The reviews showing are only the one connected to the product on the page.
 
-![review image](misc/review.PNG)
+![review image](misc/reviews.PNG)
 
 ### Bag
 The bag is a table with one row for each item. The row contains the product name (this links to the product detail page), the price of the product, the quantity and the total cost for the whole quantity. Below the name of the product there is red text saying "remove". When it is clicked on, it will remove the item from the bag.
@@ -106,6 +106,7 @@ The checkout is where the user acctually places their order. It has a summary of
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph), and a "read more" button. The page with the full article shows the title, author and full article.
 
 ![articles image](misc/article.PNG)
+![articles full image](misc/article_full.PNG)
 
 ### Contact us
 This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It used the messages model.
@@ -210,11 +211,11 @@ Admin user:
 The website was natively tested on these devices:
 - Acer Aspire 5
 - 1440p monitor (hooked up to a tower pc)
-
+- iPad
 
 The website was also tested on these devices thru Mozilla Dev Tools:
-- Ipad
-- 
+- iPad
+- iPhone SE (2nd generation)
 
 ### Browser Testing
 The website was tested on these browsers:
