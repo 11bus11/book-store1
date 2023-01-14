@@ -327,42 +327,43 @@ For the static files I used AWS S3:
     - Accept that everyone can access the Bucket.
     - Save the changes.
 - AWS IAM (Identity and Access Management) setup.
-    - From the IAM dashboard within AWS, select User Groups:
-        Create a new group
-        Click through and Create Group
-    Select Policies:
-        Create policy
-        Under JSON tab, click Import managed policy
-        Choose AmazongS3FullAccess
-        Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
-        Click next step and go to Review policy
-        Give the policy a name and description of your choice
-        Create policy
-    Go back to User Groups and choose the group created earlier
-        Under Permissions > Add permissions, choose Attach Policies and select the one just created
-        Add permissions
-    Under Users:
-        Choose a user name
-        Select Programmatic access as the Access type
-        Click Next
-        Add the user to the Group just created
-        Click Next and Create User
-    Download the .csv containing the access key and secret access key.
-        THE .csv FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN.
+    - From the IAM dashboard within AWS, select User Groups
+    - Create a group. Click through and Create Group.
+- Select Policies.
+    - Create a policy.
+    - Go to the JSON tab and click "Import managed policy".
+    - Choose AmazongS3FullAccess.
+    - Edit the resource to include the Bucket ARN from earlier (when you created the Bucket Policy).
+    - Click next step, go to Review policy.
+    - Give the policy a name and description.
+    - Create the policy.
+- Go to User Groups and choose the group you created.
+    - Go to Permissions > Add permissions.
+    - Attach Policies and select the one just created
+    - Add permissions.
+- Go to Users.
+    - Choose a user name.
+    - Select Programmatic access as the Access type.
+    - Add the user to the Group just created.
+    - Create User.
+- Download the .csv file containing the access key and secret access key.
+    - The file can only be downloaded once.
 
-Connecting Heroku to AWS S3
+- Connecting Heroku to AWS S3
 
-    Install boto3 and django-storages
+Install boto3 and django-storages by typing these commands in the terminal:
 ```
 pip3 install boto3
 pip3 install django-storages
 pip3 freeze > requirements.txt
 ```
 
-    Add the values from the .csv you downloaded to your Heroku Config Vars under Settings:
-    Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
-    With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
-        PLEASE MAKE SURE media AND static FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS
+- Add the values from the .csv to your Heroku Config Vars.
+- Delete the DISABLE_COLLECTSTATIC variable from your Config vars. 
+- Deploy your Heroku app.
+
+- Now, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+    - Make sure the permissions are correct.
 
 
 ## Credits
