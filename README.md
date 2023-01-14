@@ -51,17 +51,19 @@ I chose to use the font "Rubik Bubbles" for the store name and main page titles.
 The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
 ## Key models
-These are the main models in this project.
+These are some of the models in this project.
+
 ### Product
 This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
 
 ### Article
-The "article" models the name of the article, the author, the date it was last edited, and the article content. It also has a field for an image-link, in case the artice has a picture. 
+The "article" models the name of the article, the author, the date it was last edited, and the article content.
 
 ### Checkout
-When placing an order the checkout model will be used. It has both writable and non-writable object, depending on if the user needs to provide information or not.
+When placing an order the checkout model will be used. It has both writable and non-writable object, depending on if the user needs to provide information or not. The payments are processed thru 
 
 ### Review
+A review contains a score and a name. Every review is also connected to a product. These 3 are the fields in the model.
 
 ### Messages
 The messages model is used for the contact form on the home page. It contains name, e-mail, message, and date. The model has a form connected to it.
@@ -84,18 +86,19 @@ When the user clicks on the button to get more information about a product, a pa
 
 ![product detail image]()
 
+##### Reviews
+At the bottom of the product details page, the user can see a review form and reviews. The reviews showing are only the one connected to the product on the page.
+
 ### Bag
 The bag is a table with one row for each item. The row contains the product name (this links to the product detail page), the price of the product, the quantity and the total cost for the whole quantity. Below the name of the product there is red text saying "remove". When it is clicked on, it will remove the item from the bag.
 
 Below the items there is information about the delivery cost, the product cost, and the total cost. The checkout button is below this, right by the "keep shopping" button. There is also a checkout button at the top.
 
-### Wishlist
-
 ### Checkout
-The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and the payment options. At the bottom of the page, there is a button for placing the order, and a button for going back to the shopping bag (there is also one at the top).
+The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and , alost at the bottom, the payment field. At the bottom of the page, there is a button for placing the order, and a button for going back to the shopping bag (there is also one at the top).
 
 ### Articles
-The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph) and a "read more" button. The page with the full article shows an image at the top (if there is one), the title, author and full article.
+The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph), and a "read more" button. The page with the full article shows the title, author and full article.
 
 ### Contact us
 This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It used the messages model.
@@ -104,24 +107,74 @@ This is a form for sending a message to the people behind the e-shop. It can be 
 When a user does someting that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, eroor, success and info. Depending on what message is returned, a different toast is shown.
 
 ### Admin
-The admin can add, edit and remove products thru the admin page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories. The same goes for the articles.
+The admin can add, edit and remove products thru the product management (add) and product detail (edit, remove) page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories thru the admin page. The same goes for the articles.
 
-Products, articles and the messages from users can be accessed from the frontend.
+Product management, and the messages from users can be accessed from the frontend.
 
 ### Potential Features
 - If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
 - Another thing that would be nice to have is the ability for the user to pay thru Swish or Klarna.
 
-## Requirements file
-This is the content of the requirements file, which explains what needs to be installed in order to run the code.
+## Technologies and packages
+This is the content of the requirements file, which explains what needs to be installed in order to run the code. Some of the installed packages are not used, but were used in earlier versions.
+
+asgiref==3.6.0
+boto3==1.26.45
+botocore==1.29.45
+Brotli==1.0.9
+click==8.1.3
+dj-database-url==0.5.0
+Django==3.2
+django-allauth==0.41.0
+django-countries==7.2.1
+django-crispy-forms==1.14.0
+django-storages==1.13.2
+Flask==2.2.2
+Flask-SQLAlchemy==2.5.1
+greenlet==2.0.1
+gunicorn==20.1.0
+itsdangerous==2.1.2
+jmespath==1.0.1
+oauthlib==3.2.2
+Pillow==9.3.0
+psycopg2==2.9.5
+python3-openid==3.2.0
+pytz==2022.7
+requests-oauthlib==1.3.1
+s3transfer==0.6.0
+SQLAlchemy==1.4.45
+sqlparse==0.4.3
+stripe==2.42.0
+Werkzeug==2.2.2
+whitenoise==6.3.0
+
+### Technologies
+
+#### Languages
+- HTML
+- CSS
+- JavaScript
+- Python
+
+#### Others
+- [Bootstrap](https://getbootstrap.com/)
+    - Used to create the frontend.
+- [Django](https://www.djangoproject.com/)
+    - Fullstack framework used for this project.
+- [Stripe](https://stripe.com/se)
+    - Handles payments.
+- [AWS (S3)](https://aws.amazon.com/)
+    - Used for storing static (css and js) and media (images) files.
 
 ## Testing
 
 ### User Stories
 Site user:
 - Easily use and understand the website.
+    - The website has a pretty standard UI (user interface), which makes it easy for people to use.
 - Create account where they can see previous purchases.
+    - With the help of allauth, the user can create ann account, and on the "my profiles" page the users can see their previous purcheses (if the user was logged in at the time of the purchase).
 - See products available. Including status and options.
     - The products page shows which products exist and if they are in stock or not. If the user is loged in, they can also add a product to their wish-list.
 - Add and remove products in the cart.
@@ -129,9 +182,11 @@ Site user:
 - Search for products.
     - The user can search for products thru the search-bar. When this is done, the program searches for matches in, among others, the title and the description for the book. Only the books with a match to the search term shows up.
 - Navigate categories and get relevant results.
-    In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
+    - In the shop dropdown the user can choose to either show all products, or show the products in a specific category. If the user chooses "history", only the history books will show up. 
 - Pay for products.
+    - This e-shop uses [stripe](stripe.com) for payments. The user write their card info, and stripe handles the transaction.
 - Write reviews
+    - On the product detail page, the user can add reviews (only score, not text). The reviews are then visible on the page for the relevant product.
 
 Admin user:
 - Add/edit/remove products.
