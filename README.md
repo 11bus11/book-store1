@@ -20,7 +20,7 @@ Site user:
 - Search for products.
 - Navigate categories and get relevant results.
 - Pay for products.
-- Write reviews
+- Write reviews.
 
 Admin user:
 - Add/edit/remove products.
@@ -119,6 +119,7 @@ Product management, and the messages from users can be accessed from the fronten
 ## Technologies and packages
 This is the content of the requirements file, which explains what needs to be installed in order to run the code. Some of the installed packages are not used, but were used in earlier versions.
 
+```
 asgiref==3.6.0
 boto3==1.26.45
 botocore==1.29.45
@@ -148,6 +149,7 @@ sqlparse==0.4.3
 stripe==2.42.0
 Werkzeug==2.2.2
 whitenoise==6.3.0
+```
 
 ### Technologies
 
@@ -269,31 +271,31 @@ The database is on ElephantSQL.
 - Create instance.
 - Click on your instance to see the information. 
 - Copy the url and add it to the Config Vars as DATABASE_URL.
-- Add the following code instead of the earlier database settings (in settings.py:
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+- Add the following code instead of the earlier database settings in settings.py:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+       'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
-    else:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
-- Go to elephantSQL and go to teh "BROWSER" tab. Choose auth_user from table querries. Then click execute.
+    }
+```
+- Go to elephantSQL and go to the "BROWSER" tab. Choose auth_user from table querries. Then click execute.
 
 For the static files I used AWS S3:
-
-   - Create an Amazon AWS account
-   - Search for S3 and create a new bucket
-       - Allow public access
-   - Under Properties > Static website hosting
-        Enable
-        index.html as index.html
-        save
-    Under Permissions > CORS copy the following:
-
+- Create an Amazon AWS account.
+- Search for S3 and create a new bucket.
+    - Allow public access.
+- Go to Properties > Static website hosting.
+   - Click on the following:
+    Enable > index.html as index.html > save.
+- Go to Permissions > CORS and copy the following:
+```
 [
   {
       "AllowedHeaders": [
@@ -308,25 +310,24 @@ For the static files I used AWS S3:
       "ExposeHeaders": []
   }
 ]
+```
 
-    Under Permissions > Bucket Policy:
-        Generate Bucket Policy and take note of Bucket ARN
-        Chose S3 Bucket Policy as Type of Policy
-        For Principal, enter *
-        Enter ARN noted above
-        Add Statement
-        Generate Policy
-        Copy Policy JSON Document
-        Paste policy into Edit Bucket policy on the previous tab
-        Save changes
-    Under Access Control List (ACL):
-        For Everyone (public access), tick List
-        Accept that everyone in the world may access the Bucket
-        Save changes
-
-AWS IAM (Identity and Access Management) setup
-
-    From the IAM dashboard within AWS, select User Groups:
+- Go to Permissions > Bucket Policy.
+    - Generate a Bucket Policy and take note of Bucket ARN.
+    - Chose S3 Bucket Policy as Type of Policy.
+    - Enter * as principle.
+    - Enter ARN from the note mentioned above.
+    - Add Statement.
+    - Generate the Policy.
+    - Copy the Policy JSON Document.
+    - Paste the policy into Edit Bucket policy on the previous tab.
+    - Save the changes.
+- Go to ACL (Access Control List).
+    - Choose List for everyone (public access).
+    - Accept that everyone can access the Bucket.
+    - Save the changes.
+- AWS IAM (Identity and Access Management) setup.
+    - From the IAM dashboard within AWS, select User Groups:
         Create a new group
         Click through and Create Group
     Select Policies:
@@ -352,10 +353,11 @@ AWS IAM (Identity and Access Management) setup
 Connecting Heroku to AWS S3
 
     Install boto3 and django-storages
-
+```
 pip3 install boto3
 pip3 install django-storages
 pip3 freeze > requirements.txt
+```
 
     Add the values from the .csv you downloaded to your Heroku Config Vars under Settings:
     Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
