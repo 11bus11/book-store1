@@ -79,29 +79,38 @@ There is also a search bar where users can find products.
 #### Product card
 A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button there is some muted text telling the user if the item is in stock or not. 
 
-![product card image]()
+![product card image](misc/product_card.PNG)
 
 #### Product details
 When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right (in the mobile view the image is above the information). Below the pruduct information is the quantity selector, "add to cart"/"out of stock" and "add to wishlist" buttons. If the stock numbers are below 1, the "out of stock" will show up. This button does not link to the shopping cart. If the product is in stock, the "add to cart" button will appear. This button will add the chosen quantity of an item to the cart. The wishlist button only appears if the user is signed in. 
 
-![product detail image]()
+![product detail image](misc/product_detail.PNG)
 
-##### Reviews
 At the bottom of the product details page, the user can see a review form and reviews. The reviews showing are only the one connected to the product on the page.
+
+![review image](misc/review.PNG)
 
 ### Bag
 The bag is a table with one row for each item. The row contains the product name (this links to the product detail page), the price of the product, the quantity and the total cost for the whole quantity. Below the name of the product there is red text saying "remove". When it is clicked on, it will remove the item from the bag.
 
 Below the items there is information about the delivery cost, the product cost, and the total cost. The checkout button is below this, right by the "keep shopping" button. There is also a checkout button at the top.
 
+![bag image](misc/bag.PNG)
+
 ### Checkout
 The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and , alost at the bottom, the payment field. At the bottom of the page, there is a button for placing the order, and a button for going back to the shopping bag (there is also one at the top).
+
+![checkout image](misc/checkout.PNG)
 
 ### Articles
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph), and a "read more" button. The page with the full article shows the title, author and full article.
 
+![articles image](misc/article.PNG)
+
 ### Contact us
 This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It used the messages model.
+
+![contact image](misc/contact.PNG)
 
 ### Toasts
 When a user does someting that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, eroor, success and info. Depending on what message is returned, a different toast is shown.
