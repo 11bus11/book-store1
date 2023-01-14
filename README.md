@@ -257,7 +257,7 @@ This project was deployed with Heroku.
     - Choose to deploy from GitHub.
     - Connect your account and choose a repository to deploy from.
     - Choose either Automatic or Manual deployment (recommended).
-- Make sure the live site is working.
+- Add DISABLE_COLLECTSTATIC as a Config Var.
 
 The database is on ElephantSQL.
 - Create an account on ElephantSQL. Do not forget to confirm your e-mail.
@@ -286,6 +286,7 @@ else:
     }
 ```
 - Go to elephantSQL and go to the "BROWSER" tab. Choose auth_user from table querries. Then click execute.
+- Migrate the models to the database and make sure everything is working.
 
 For the static files I used AWS S3:
 - Create an Amazon AWS account.
