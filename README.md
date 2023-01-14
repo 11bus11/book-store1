@@ -226,6 +226,7 @@ The website was tested on these browsers:
 
 ### Peer Review
 - I showed the front-end to my dad, and he thought it looked good. The thing he asked about was the lack of images, which I had not yet gotten to. Other than that he thought it looked good and was easy to use. 
+- At the end of production, I showed the website to my sister (17yo). She thought the shop worked well, but thought a more robust product filtering system would be useful.
 
 ### Validator Testing
 
