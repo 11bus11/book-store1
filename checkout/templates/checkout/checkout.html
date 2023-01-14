@@ -37,11 +37,11 @@
                                 <th>{{ item.product.name }}</th>
                                 <td>{{ item.product.price | floatformat:2 }}kr</td>
                                 <td>{{ item.quantity }}</td>
-                                <td>{{ item.product.price | floatformat:2 }}kr</td>
+                                <td>{{ item.lineitem_total | floatformat:2 }}kr</td>
                             </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
-                        {% endfor %}
                     <div class="row text-black">
                         <div class="col-10">
                             <p class="my-0">Products: {{ total | floatformat:2 }}kr</p>

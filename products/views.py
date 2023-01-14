@@ -60,6 +60,18 @@ def product_detail(request, product_id):
     else:
         form = ReviewForm()
 
+    def score_average(product):
+        item_score = 0
+        num = 0
+        for review in review:
+            if review.product == product:
+                item_score += review.score
+                num += 1
+        item_average = item_score/num
+        return item_average
+
+    average = score_average(product_id)
+
     context = {
             'product': product,
             'form': form,
