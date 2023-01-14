@@ -387,6 +387,6 @@ For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/
 Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
 
 ### Content and Media
-When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site](https://book-store-ci.herokuapp.com/) on each book's product page. The publisher can be seen on the covers. The description for the books also tells the user where the description was copied from. 
+When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site](https://book-store-ci.herokuapp.com/) on each book's product page. The publisher can be seen on the covers. The description for the books are from [goodreads](https://www.goodreads.com/), [wikipedia](wikipedia.com) or [bokus](https://www.bokus.com/).
 
-Erik Vodopivec Forsman, 2022
+Erik Vodopivec Forsman, 2023
