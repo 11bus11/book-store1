@@ -50,8 +50,14 @@ I chose to use the font "Rubik Bubbles" for the store name and main page titles.
 
 The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
 
+## Wireframes
+Before creating the frontend, I made some simple wireframes. I also made some updated ones in the middle of the project. These are links to the innitial- and the second wireframes (the final result is not identical):
+[wireframe innitial](misc/wireframe-v1.pdf)
+[wireframe v2](misc/wireframe-v2.pdf)
+
 ## Key models
-These are some of the models in this project.
+These are some of the models in this project. The models are connected like this:
+[database map](misc/db-map.pdf)
 
 ### Product
 This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
@@ -98,9 +104,15 @@ Below the items there is information about the delivery cost, the product cost, 
 ![bag image](misc/bag.PNG)
 
 ### Checkout
-The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and , alost at the bottom, the payment field. At the bottom of the page, there is a button for placing the order, and a button for going back to the shopping bag (there is also one at the top).
+The checkout is where the user acctually places their order. It has a summary of the order, a form for giving all information needed for the delivery and , alost at the bottom, the payment field. At the bottom of the page, there is a button for completing the order, and a button for going back to the shopping bag (there is also one at the top).
 
 ![checkout image](misc/checkout.PNG)
+
+When the user completes the order, an overlay appears while Stripe tries to process the payment. If the payment goes thru, the user is sent to a success page (att this point an order has been saved). If the payment does not go thru, the user is sent back to the checkout page and gets an error message. 
+
+The success page containes information about the order, and information about the fact that a confirmation email is being sent.
+
+![checkout success image](misc/checkout-success.PNG)
 
 ### Articles
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph), and a "read more" button. The page with the full article shows the title, author and full article.
@@ -109,7 +121,9 @@ The articles work similarly to the products. A preview of each article is shown 
 ![articles full image](misc/article_full.PNG)
 
 ### Contact us
-This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It used the messages model.
+This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It uses the messages model and simply shows a list of the messages that has been sent.
+
+The user can sign up for a newsletter by ticking a box. This is not currently connected to anything, but if I made this into a real store, it would create an email list.
 
 ![contact image](misc/contact.PNG)
 
@@ -117,9 +131,16 @@ This is a form for sending a message to the people behind the e-shop. It can be 
 When a user does someting that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, eroor, success and info. Depending on what message is returned, a different toast is shown.
 
 ### Admin
-The admin can add, edit and remove products thru the product management (add) and product detail (edit, remove) page. They input all the info about the books and then they show up in the category chosen. If needed they can also add more categories thru the admin page. The same goes for the articles.
+The admin can add products thru the product management. They can also edit and remove products from the product detail page. To add a product all they have to do is go to the product management, and input all the info about the book and then they show up in the category chosen. If needed they can access and modify data thru the original django admin page.
 
-Product management, and the messages from users can be accessed from the frontend.
+Product management, and the messages from users can be accessed from the frontend. If the user is not logged in as an admin, the admin pages are not accessable.
+
+![admin product detail image](misc/admin-product-detail.PNG)
+
+### Footer
+The footer is very simple with an adress and a link to the store's facebook bussiness page.
+
+![footer image](misc/footer.PNG)
 
 ### Potential Features
 - If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
