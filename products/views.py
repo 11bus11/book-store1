@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Avg
 from django.contrib import messages
 from django.db.models import Q
 
@@ -60,21 +61,12 @@ def product_detail(request, product_id):
     else:
         form = ReviewForm()
 
-    #def score_average(product):
-    #    item_score = 0
-    #    num = 0
-    #    for review in review:
-    #        if review.product == product:
-    #            item_score += review.score
-    #            num += 1
-    #    item_average = item_score/num
-    #    return item_average
-
-    #average = score_average(product_id)
+    average = product.review_set.all().aggregate(Avg('score'))['score__avg']
 
     context = {
             'product': product,
             'form': form,
+            'average': average,
         }
 
     return render(request, 'products/product_detail.html', context)

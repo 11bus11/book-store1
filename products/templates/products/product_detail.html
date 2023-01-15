@@ -23,19 +23,22 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="col-5">
+                <div class=" col-10 col-md-5">
                     <div class="product-details-container mb-5 mt-md-5">
                         <h4 class="mb-0 fw-bold">{{ product.name }}</h4>
                         <p class="mb-2 text-muted">{{ product.author }}</p>
+                        {% if request.user.is_superuser %}
                         <div>
                             <a href="{% url 'edit_products' product.id %}"><button class="btn btn-outline-dark">Edit</button></a>
                             <a href="{% url 'delete_products' product.id %}"><button class="btn btn-danger">Delete</button></a>
                         </div>
+                        {% endif %}
                         <p class="lead mb-2 text-left font-weight-bold">{{ product.price }}kr</p>
                         <p class="mb-0 text-left font-weight-normal">{{ product.description }}</p>
                         {% if product.category %}
                         <p class="small mt-1 mb-0 text-muted">Category: {{ product.category }}</p>
                         {% endif %}
+                        <p class="small mt-1 mb-0 text-muted">Review score: {{ average }} </p>
                         <div class="mt-2">
                             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                                 {% csrf_token %}
@@ -54,7 +57,6 @@
                                         <a href="{% url 'products' %}" class="btn btn-outline-dark  mt-5">
                                             <span class="">Keep Shopping</span>
                                         </a>
-
                                         {% if product.stock > 0 %}
                                         <input type="submit" class="btn btn-success mt-5" value="Add to Bag">
                                         {% else %}
@@ -87,6 +89,7 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Score</th>
+                                <th scope="col">Average: {{ average }}</th>
                             </tr>
                         </thead>
                         {% for review in product.review_set.all %}

@@ -6,7 +6,14 @@
     --istok-web-font: 'Istok Web', sans-serif;
 }
 
+form {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
 
+.stripe-style-input {
+    max-width: 100%;
+}
 
 nav {
     background-color: var(--light-green);
