@@ -9,8 +9,6 @@ def bag_contents(request):
     bag_items = []
     total = 0
     product_count = 0
-    item_total = 0
-    
     
     bag = request.session.get('bag', {})
 
@@ -24,20 +22,12 @@ def bag_contents(request):
             'product': product,
         })
 
-    if product_count * 0.3 >= 2:
-        delivery = 2 * Decimal(settings.DELIVERY_BASE_COST)
-    elif product_count * 0.3 >= 6:
-        delivery = 3 * Decimal(settings.DELIVERY_BASE_COST)
-    else:
-        delivery = Decimal(settings.DELIVERY_BASE_COST)
+    delivery = Decimal(settings.DELIVERY_BASE_COST)
 
     if total == 0:
         grand_total = total
     else:
         grand_total = delivery + total
-
-    print(f"Grand total: {grand_total}")
-
 
     context = {
         'bag_items': bag_items,

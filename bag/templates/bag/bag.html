@@ -22,7 +22,6 @@
                             <th scope="col">Product</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -34,7 +33,6 @@
                             </th>
                             <td>{{ item.product.price | floatformat:2 }}kr</td>
                             <td>{{ item.quantity }}</td>
-                            <td>{{ item.product.price | floatformat:2 }}kr</td>
                         </tr>
                         {% endfor %}
                         </tbody>
