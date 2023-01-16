@@ -9,6 +9,10 @@ This is a store i created for my 5th project in the Code Institute Software Deve
 - Giving the user the option to add a product to a wishlist.
 - The user being able to contact the store directly from the website.
 
+## Bussines model
+The bussines model is on this pdf. A lot of the ficus is on the future of the store.
+[Bussines model](bussines-model.pdf)
+
 ## UX - User Experience
 ### User Stories
 Site user:
@@ -86,16 +90,17 @@ There is also a search bar where users can find products.
 #### Product card
 A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button there is some muted text telling the user if the item is in stock or not. 
 
-![product card image](misc/product_card.PNG)
+![product card image](misc/product-card.PNG)
 
 #### Product details
-When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right (in the mobile view the image is above the information). Below the pruduct information is the quantity selector, "add to cart"/"out of stock" and "add to wishlist" buttons. If the stock numbers are below 1, the "out of stock" will show up. This button does not link to the shopping cart. If the product is in stock, the "add to cart" button will appear. This button will add the chosen quantity of an item to the cart. The wishlist button only appears if the user is signed in. 
+When the user clicks on the button to get more information about a product, a page showing the information for the specific product opens. It shows the product image to the left, and all the other information about the product to the right (in the mobile view the image is above the information). Below the pruduct information is the quantity selector, "keep shopping" and "add to cart"/"out of stock" buttons. If the stock numbers are below 1, the "out of stock" will show up. This button does not link to the shopping cart. If the product is in stock, the "add to cart" button will appear. This button will add the chosen quantity of an item to the cart.
 
-![product detail image](misc/product_detail.PNG)
+![product detail image 1](misc/product-detail-1.PNG)
+![product detail image 2](misc/product-detail-2.PNG)
 
 At the bottom of the product details page, the user can see a review form and reviews. The reviews showing are only the one connected to the product on the page.
 
-![review image](misc/reviews.PNG)
+![review image](misc/review.PNG)
 
 ### Bag
 The bag is a table with one row for each item. The row contains the product name (this links to the product detail page), the price of the product, the quantity and the total cost for the whole quantity. Below the name of the product there is red text saying "remove". When it is clicked on, it will remove the item from the bag.
@@ -119,7 +124,7 @@ The success page containes information about the order, and information about th
 The articles work similarly to the products. A preview of each article is shown on the articles page, and when the user click on an article they are sent to a page with the full article. The preview contains the title, the author, an introduction of the article (first paragraph), and a "read more" button. The page with the full article shows the title, author and full article.
 
 ![articles image](misc/article.PNG)
-![articles full image](misc/article_full.PNG)
+![articles full image](misc/article-full.PNG)
 
 ### Contact us
 This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It uses the messages model and simply shows a list of the messages that has been sent.
@@ -136,8 +141,6 @@ The admin can add products thru the product management. They can also edit and r
 
 Product management, and the messages from users can be accessed from the frontend. If the user is not logged in as an admin, the admin pages are not accessable.
 
-![admin product detail image](misc/admin-product-detail.PNG)
-
 ### Footer
 The footer is very simple with an adress and a link to the store's facebook bussiness page.
 
@@ -147,6 +150,7 @@ The footer is very simple with an adress and a link to the store's facebook buss
 - If I had the time I would expand on the sorting options and other features making it easier for the user to find the right product.
 - I would also want to expand on the admin features. For example, make it possible to answer incoming messages in the admin window. 
 - Another thing that would be nice to have is the ability for the user to pay thru Swish or Klarna.
+- I would also make it s that the stock number is changed when an item is bought.
 
 ## Technologies and packages
 This is the content of the requirements file, which explains what needs to be installed in order to run the code. Some of the installed packages are not used, but were used in earlier versions.
@@ -276,7 +280,7 @@ I used pycodestyles in the gitpod editor in order to find errors in my python fi
 - While implementing the add-to-bag functionality, I first printed the values of the items to the consol, to make sure everyhting was working. After that I could make sure everything was working thru the bag itself, since it shows both the item, the total price, delivery price and the quantity.
 - For the remove-from-bag functionality, I tested if it worked in the same way I did the add-to-bag function.
 - The checkout delivery forms system was tested in much the same way. the only difference was that i had to make sure it was not possible to access it with an empty shopping bag. I did that by trying to go to the checkout wkthout anything in the bag, and making sure I got sent back to the bag right away.
-- The payment system was tested by making trial payments with the Stripe "test card". This card number is used for making test payments. Se the info about test payments [here](). After making the test payment, I checked on the dashboard to see if it went thru without issues or, if not, what the issue was.
+- The payment system was tested by making trial payments with the Stripe "test card". This card number is used for making test payments. Se the info about test payments [here](https://stripe.com/docs/testing). After making the test payment, I checked on the dashboard to see if it went thru without issues or, if not, what the issue was.
 - I tested if the toasts worked as expected by performing acctions that should trigger them (e.g adding an item to the bag). I made sure I triggered both success, error and intormation toasts to make sure it was showing the right kind of toast.
 - To test the 404 page, I changed DEBUG to False and tried t go to a non existent extention (e.g /fhrnt). That way i could make sure the custom 404 page was showing up.
 - I tested all the front end admin functionality by trying to use it. As an example, i created a product, edited it, and then deleted it. I made sure the order information and messages showed up where they should and when they should by trying to get access to them both logged in and logged out. I also tried it as an admin user, and as a standard user.
@@ -287,7 +291,6 @@ I used pycodestyles in the gitpod editor in order to find errors in my python fi
 - When I wrote the link to the product_details of the bag items, I could not get the product id to work. After a while i realised that i had been referencing the wrong id. Had similar problems later in the project too.
 
 #### Unfixed bugs
-- It is possible to add more products than there is in stock to the bag. If you do all you get is a message saying you added a higher amount than the current stock and that the shipping of these products will be delayed due to this.
 - If there is an image url, which does not work, the website will not show the substitution image. This is because the if-statememt only checks if there is an image url, not if it acctually works. the reason for this bug existing is time constraints. I prioritised larger issues before this. 
 
 ### Deployment
