@@ -11,7 +11,7 @@ This is a store i created for my 5th project in the Code Institute Software Deve
 
 ## Bussines model
 The bussines model is on this pdf. A lot of the ficus is on the future of the store.
-[Bussines model](bussines-model.pdf)
+[Business model](business-model.pdf)
 
 ## UX - User Experience
 ### User Stories
