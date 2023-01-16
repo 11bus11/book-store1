@@ -233,6 +233,7 @@ The website was natively tested on these devices:
 - Acer Aspire 5
 - 1440p monitor (hooked up to a tower pc)
 - iPad
+- iPhone SE (2nd generation)
 
 The website was also tested on these devices thru Mozilla Dev Tools:
 - iPad
@@ -250,6 +251,22 @@ The website was tested on these browsers:
 - At the end of production, I showed the website to my sister (17yo). She thought the shop worked well, but thought a more robust product filtering system would be useful.
 
 ### Validator Testing
+#### Jigsaw - CSS
+I used [Jigsaw](https://jigsaw.w3.org/css-validator/) to check for errors in my CSS documents. It showed no errors.
+
+![jigsaw style file](misc/jigsaw-style.JPG)
+![jigsaw checkout file](misc/jigsaw-checkout.JPG)
+
+#### AppDevTools - HTML
+For the html validation, I used [AppDevTools](https://appdevtools.com/html-validator). It checks the code against the W3C standards. I got no errors that was not related to my use of bootstraps. The validator did not like the ``` {% codeblocks %} ```.
+
+![html base](misc/html-base.JPG)
+
+#### JavaScript
+I tested the JavaScript syntax with the [JS validator](https://jsvalidator.com). I got no errors on any of the files or the content of the inline script tags.
+
+#### PIP8 - Python
+I used pycodestyles in the gitpod editor in order to find errors in my python files. There are no errors except "line to long". There are also 2 errors about the amount of blank lines before an inline comment, but when i solved them it complained about to many lines.
 
 ### Manual testing
 - Tested the models by creating instances. This was to make sure the fields looked like they should and that everything worked as expected.
@@ -259,11 +276,9 @@ The website was tested on these browsers:
 - For the remove-from-bag functionality, I tested if it worked in the same way I did the add-to-bag function.
 - The checkout delivery forms system was tested in much the same way. the only difference was that i had to make sure it was not possible to access it with an empty shopping bag. I did that by trying to go to the checkout wkthout anything in the bag, and making sure I got sent back to the bag right away.
 - The payment system was tested by making trial payments with the Stripe "test card". This card number is used for making test payments. Se the info about test payments [here](). After making the test payment, I checked on the dashboard to see if it went thru without issues or, if not, what the issue was.
-
-### Software Testing
-#### JavaScript Testing - Jest
-
-#### Python Testing
+- I tested if the toasts worked as expected by performing acctions that should trigger them (e.g adding an item to the bag). I made sure I triggered both success, error and intormation toasts to make sure it was showing the right kind of toast.
+- To test the 404 page, I changed DEBUG to False and tried t go to a non existent extention (e.g /fhrnt). That way i could make sure the custom 404 page was showing up.
+- I tested all the front end admin functionality by trying to use it. As an example, i created a product, edited it, and then deleted it. I made sure the order information and messages showed up where they should and when they should by trying to get access to them both logged in and logged out. I also tried it as an admin user, and as a standard user.
 
 ### Bugs
 #### Fixed Bugs
