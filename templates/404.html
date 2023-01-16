@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block extra_header %}404 - page not found{% endblock %}
+
 {% block content %}
     <div class="container header-container">
         <div class="row">
@@ -13,11 +16,9 @@
                     The page you are looking for isn't available... :(
                 </h1>
                 <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
-                            Return to shop
+                        <a href="{% url 'home' %}" class="text-decoration-none text-black">
+                            <div class="btn btn-outline-dark">Return home</div>
                         </a>
-                    </h4>
                 </div>
             </div>
         </div>

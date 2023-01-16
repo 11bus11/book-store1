@@ -29,12 +29,12 @@
                         <p class="mb-2 text-muted">{{ product.author }}</p>
                         {% if request.user.is_superuser %}
                         <div>
-                            <a href="{% url 'edit_products' product.id %}"><button class="btn btn-outline-dark">Edit</button></a>
-                            <a href="{% url 'delete_products' product.id %}"><button class="btn btn-danger">Delete</button></a>
+                            <a href="{% url 'edit_products' product.id %}"><div class="btn btn-outline-dark">Edit</div></a>
+                            <a href="{% url 'delete_products' product.id %}"><div class="btn btn-danger">Delete</div></a>
                         </div>
                         {% endif %}
                         <p class="lead mb-2 text-left font-weight-bold">{{ product.price }}kr</p>
-                        <p class="mb-0 text-left font-weight-normal">{{ product.description }}</p>
+                        <p class="mb-0 text-left font-weight-normal">{{ product.description|linebreaks|safe }}</p>
                         {% if product.category %}
                         <p class="small mt-1 mb-0 text-muted">Category: {{ product.category }}</p>
                         {% endif %}
@@ -54,13 +54,11 @@
                                         </div>
                                     </div>
                                     <div class="col{% if s %}-12 mt-2{% endif %}">
-                                        <a href="{% url 'products' %}" class="btn btn-outline-dark  mt-5">
-                                            <span class="">Keep Shopping</span>
-                                        </a>
+                                        <a href="{% url 'products' %}?category=Adventure,Romance,Fantasy,History,Nature,Religion"><div class="btn btn-outline-dark">Keep shopping</div></a>
                                         {% if product.stock > 0 %}
                                         <input type="submit" class="btn btn-success mt-5" value="Add to Bag">
                                         {% else %}
-                                        <button class="btn btn-secondary mt-5 mr-2" href="#">Out of stock</button>
+                                        <button class="btn btn-secondary mt-5 mr-2">Out of stock</button>
                                         {% endif %}
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">

@@ -10,13 +10,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <table class="table table-hover">
                     {% if bag_items %}
                         <a href="{% url 'checkout' %}">
-                            <button class="btn btn-success mt-4">
+                            <div class="btn btn-success mt-4">
                                 Checkout
-                            </button>
+                            </div>
                         </a>
+                    <table class="table table-hover">
                         <thead>
                           <tr>
                             <th scope="col">Product</th>
@@ -46,8 +46,8 @@
                     {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     {% endif %}
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark mt-4 mb-4 mr-2">Keep shopping?</a>
-                    <a href="{% url 'checkout' %}" class="btn btn-success mt-4 mb-4 ">Checkout</a>
+                    <a href="{% url 'products' %}"><div class="btn btn-outline-dark mt-4 mb-4 mr-2">Keep shopping?</div></a>
+                    <a href="{% url 'products' %}"><div class="btn btn-outline-dark mt-4 mb-4 mr-2">Checkout</div></a>
                 </div>
             </div>
         </div>

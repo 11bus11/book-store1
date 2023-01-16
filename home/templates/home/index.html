@@ -17,7 +17,8 @@
                                 <img class="col-12 col-lg-5 img-fluid" src="{{MEDIA_URL}}dino.JPG" alt="Orange cat resting">
                                 <div class=" row col-12 col-lg-4 m-3" >
                                     <h2>About us!</h2>
-                                    <p>This is a simple online book store with a small selection of books. It is called Dino's book store, after my cat.</p>
+                                    <p>This is a small online book store with a small selection of books. It is called Dino's book store, after my cat. Since this is a small business, we do not offer a lot of products. But the books we have are ones we ourselves think are worth your time to read. We are also continuasly working to add more books to the store.</p>
+                                    <p>Come meet us at <a class="text-black" href="https://bokmassan.se/">Bokmässan - Göteborg</a> or at <a class="text-black" href="https://www.comicconstockholm.se/sv/">ComicCon Stockholm</a>, where we will be one of the small book stores taking part.</p>
                                     <p>//Dino and Erik</p>
                                 </div>
                             </div>
@@ -29,7 +30,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <form class="col-8" action="{% url 'send_messages' %}" method="POST" id="message-form" class="form mb-5">
+                            <form class="col-8 form mb-5" action="{% url 'send_messages' %}" method="POST" id="message-form">
                                 {% csrf_token %}
                                 <fieldset class="rounded px-3 mb-5 col-11 col-md-6">
                                     <legend class="fieldset-label text-black px-2 w-auto">Send us a message!</legend> <br>
