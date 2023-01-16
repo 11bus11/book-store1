@@ -34,6 +34,7 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+
 def remove_from_bag(request, item_id):
     """Add items to shopping bag"""
     print("hello")
@@ -49,4 +50,3 @@ def remove_from_bag(request, item_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
-

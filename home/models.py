@@ -9,6 +9,6 @@ class Message(models.Model):
     name = models.CharField(max_length=254, null=True, blank=True)
     email = models.EmailField(max_length=254)
     message = models.TextField()
-    
+
     def __name__(self):
         return self.name
