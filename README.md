@@ -52,12 +52,13 @@ The reason I chose these fonts were that they worked well with the colour palett
 
 ## Wireframes
 Before creating the frontend, I made some simple wireframes. I also made some updated ones in the middle of the project. These are links to the innitial- and the second wireframes (the final result is not identical):
+
 [wireframe innitial](misc/wireframe-v1.pdf)
 [wireframe v2](misc/wireframe-v2.pdf)
 
 ## Key models
 These are some of the models in this project. The models are connected like this:
-[database map](misc/db-map.pdf)
+[database map](misc/database-map.pdf)
 
 ### Product
 This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
