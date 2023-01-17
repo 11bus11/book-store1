@@ -20,6 +20,7 @@
                             Back to bag
                         </div>
                     </a>
+                    <!-- table with items user is buying -->
                     <p class="text-black">Order Summary ({{ product_count }})</p>
                     <div class="row col-12">
                         <table class="table">
@@ -40,6 +41,7 @@
                             {% endfor %}
                             </tbody>
                         </table>
+                    <!-- cost summary -->
                     <div class="row text-black">
                         <div class="col-10">
                             <p class="my-0">Products: {{ total | floatformat:2 }}kr</p>
@@ -50,6 +52,7 @@
                 </div>
                 <div class="col-12">
                     <div class="row">
+                        <!-- user information form -->
                         <p class="text-muted">Please fill out the form below to complete your order</p>
                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}
@@ -68,7 +71,7 @@
                                 {{ order_form.postcode }}
                                 {{ order_form.country }} <br>
                             </fieldset>
-
+                            <!-- payment -->
                             <fieldset class="px-3">
                                 <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                                 <!-- A Stripe card element will go here -->
@@ -95,6 +98,7 @@
             </div>
         </div>
     </section>
+    <!-- loading overlay -->
     <div id="loading-overlay">
         <h1 class="text-black text center mt-80" id="loading">
             Checking card and customer info...
