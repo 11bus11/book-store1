@@ -19,7 +19,7 @@
                     <!-- Product image-->
                     {% if product.image_place %}
                     <a class="mt-2" href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top" src="{{MEDIA_URL}}/books{{ product.image_place }}" alt="{{ product.name }}"/>
+                        <img class="card-img-top" src="{{MEDIA_URL}}{{ product.image_place }}" alt="{{ product.name }}"/>
                     </a>
                     {% elif product.image_url %}
                     <a class="mt-2" href="{% url 'product_detail' product.id %}">
