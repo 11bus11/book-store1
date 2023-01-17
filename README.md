@@ -1,26 +1,26 @@
-# E-shop - Book store
-This is a store i created for my 5th project in the Code Institute Software Development Course. It is a simple book store with a small selection of books. It is called Dino's book store, after my cat. 
+# E-shop - Bookstore
+This is a store I created for my 5th project in the Code Institute Software Development Course. It is a simple bookstore with a small selection of books. It is called Dino's book store, after my cat. 
 
 [live site](https://book-store-ci.herokuapp.com/)
 
 ## Creator goals
-- Create a functioning e-commerse website with a search bar.
-- Making it possible to add products and articles from the front-end.
+- Create a functioning e-commerce website with a search bar.
+- Making it possible to add products and articles from the front end.
 - Giving the user the option to add a product to a wishlist.
-- The user being able to contact the store directly from the website.
+- The user can contact the store directly from the website.
 
 ## Bussines model
-The bussines model is on this pdf. A lot of the ficus is on the future of the store.
+The business model is on this pdf. A lot of the focus is on the future of the store.
 [Business model](business-model.pdf)
 
 ## UX - User Experience
 ### User Stories
 Site user:
 - Easily use and understand the website.
-- Create account where they can see previous purchases.
+- Create an account where they can see previous purchases.
 - See products available. Including status and options.
-- Add products to cart.
-- Remove product from cart.
+- Add products to the bag.
+- Remove product from the bag.
 - Search for products.
 - Navigate categories and get relevant results.
 - Pay for products.
@@ -32,7 +32,7 @@ Admin user:
 - Change stock numbers.
 
 ### Colour
-I chose to make this e-store in blue- green shades. These colours were chosen due to it being a bit different than the online book-stores where i live (sweden), and due to a bluer green being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, chich mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolices security and trust, and green symbolices harmony and safety. All the colour choices was checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
+I chose to make this e-store in blue-green shades. These colours were chosen due to it being a bit different than the online bookstores where I live (Sweden), and due to a bluer green being appealing to the eye. The reason for the combination of the two was that it would help this store to differentiate itself from other similar stores, which mostly use red or some shade of blue (for example royal blue). Another reason for my choice was the fact that the blue colour (according to, among others, the website [colour-meanings](https://www.color-meanings.com)) symbolises security and trust, and green symbolises harmony and safety. All the colour choices were checked in [accessibility checker](https://www.accessibilitychecker.org/color-contrast-checker/)'s contrast checker.
 
 ![colour-palette](misc/book-store-palette.png)
 ![colour-checker-blue-green](misc/colour-check-dark-green.PNG)
@@ -41,9 +41,9 @@ I chose to make this e-store in blue- green shades. These colours were chosen du
 ### Structure and typography 
 
 #### Structure
-I chose to create a simple structure, since the products are the thing that should attract attention. All products have a green background in the photos. This is so that they fit into the colour-palette while also attracting attention. Right below the navigation bar there is a darker field telling the user the name of the page. 
+I chose to create a simple structure since the products are the thing that should attract attention. All products have a green background in the photos. This is so that they fit into the colour palette while also attracting attention. Right below the navigation bar, there is a darker field telling the user the name of the page. 
 
-The base of the website is a simple navigation-bar with dropdown menues for products and accounts, and links for articles and home. These menues are in a dropdown-menue on the mobile version. I chose to place the search bar right below the dropdown menue and brand-name on the mobile view. That way there is no need to open a dropdown just to search for a product. The nav for medium screens are the same as the one for mobile, but with everything on one row.
+The base of the website is a simple navigation bar with a dropdown menu for products and accounts, and links for articles and home. These menus are in a dropdown menu on the mobile version. I chose to place the search bar right below the dropdown menu and brand name on the mobile view. That way there is no need to open a dropdown just to search for a product. The nav for medium screens is the same as the one for mobile, but with everything in one row.
 
 ![Nav - large screen](misc/nav-lg.PNG)
 ![Nav - medium screen](misc/nav-md.PNG)
@@ -52,10 +52,10 @@ The base of the website is a simple navigation-bar with dropdown menues for prod
 #### Typography
 I chose to use the font "Rubik Bubbles" for the store name and main page titles. For everything else I used the font "Istok Web". Both of these are from [Google Fonts](). The fonts are also san-serif, which is easier to read on a screen than serif fonts.
 
-The reason I chose these fonts were that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicous while also telling the user that effort was put into the website.
+The reason I chose these fonts was that they worked well with the colour palette. "Rubic Bubbles" is a softer font that also draws attention. "Istok Web" is inconspicuous while also telling the user that effort was put into the website.
 
 ## Wireframes
-Before creating the frontend, I made some simple wireframes. I also made some updated ones in the middle of the project. These are links to the innitial- and the second wireframes (the final result is not identical):
+Before creating the front end, I made some simple wireframes. I also made some updated ones in the middle of the project. These are links to the initial- and the second wireframes (the final result is not identical):
 
 [wireframe innitial](misc/wireframe-v1.pdf)
 [wireframe v2](misc/wireframe-v2.pdf)
@@ -65,30 +65,30 @@ These are some of the models in this project. The models are connected like this
 [database map](misc/database-map.pdf)
 
 ### Product
-This model is for all the info needed for the products. It has fields for in example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
+This model is for all the info needed for the products. It has fields for example name, price, language, category and description. The category field is connected to the "Categories" model. This way the admin can create the categories needed once, and then give the category field in the products model the value of one of them.
 
 ### Article
 The "article" models the name of the article, the author, the date it was last edited, and the article content.
 
 ### Checkout
-When placing an order the checkout model will be used. It has both writable and non-writable object, depending on if the user needs to provide information or not. The payments are processed thru 
+When placing an order the checkout model will be used. It has both writable and non-writable objects, depending on if the user needs to provide information or not. The payments are processed thru 
 
 ### Review
 A review contains a score and a name. Every review is also connected to a product. These 3 are the fields in the model.
 
 ### Messages
-The messages model is used for the contact form on the home page. It contains name, e-mail, message, and date. The model has a form connected to it.
+The messages model is used for the contact form on the home page. It contains the name, e-mail, message, and date. The model has a form connected to it.
 
 ## Features
 ### Shop
-The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category is show they are sorted alphabetically by default. From the product card you can go to the product detail page. This is where the user can add products to the shopping bag.
+The products in the shop can be shown based on their categories or the user can choose to show all the products in alphabetic order. When all products in a category are shown they are sorted alphabetically by default. From the product card, you can go to the product detail page. This is where the user can add products to the shopping bag.
 
 There is also a search bar where users can find products. 
 
 ![Shop image](misc/shop.PNG)
 
 #### Product card
-A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button there is some muted text telling the user if the item is in stock or not. 
+A product card is created for each product found on the database. Each card shows an image. Either a specific product image, or if none is found, a placeholder image telling the user that there is no product image. They also show the name of the product, the author and the price. There is also a button for opening the product details. Below the button, there is some muted text telling the user if the item is in stock or not. 
 
 ![product card image](misc/product-card.PNG)
 
@@ -127,22 +127,22 @@ The articles work similarly to the products. A preview of each article is shown 
 ![articles full image](misc/article-full.PNG)
 
 ### Contact us
-This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessable by an admin. It uses the messages model and simply shows a list of the messages that has been sent.
+This is a form for sending a message to the people behind the e-shop. It can be found on the home page. The admin can see the messages people have sent on a "messages" page, only accessible by an admin. It uses the messages model and simply shows a list of the messages that have been sent.
 
 The user can sign up for a newsletter by ticking a box. This is not currently connected to anything, but if I made this into a real store, it would create an email list.
 
 ![contact image](misc/contact.PNG)
 
 ### Toasts
-When a user does someting that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, eroor, success and info. Depending on what message is returned, a different toast is shown.
+When a user does something that returns a message, a toast pops up in the top right corner. It shows the message to the user. There are a few different toasts. Warning, error, success and info. Depending on what message is returned, a different toast is shown.
 
 ### Admin
-The admin can add products thru the product management. They can also edit and remove products from the product detail page. To add a product all they have to do is go to the product management, and input all the info about the book and then they show up in the category chosen. If needed they can access and modify data thru the original django admin page.
+The admin can add products thru product management. They can also edit and remove products from the product detail page. To add a product all they have to do is go to the product management, input all the info about the book and then they show up in the category chosen. If needed they can access and modify data thru the original Django admin page.
 
-Product management, and the messages from users can be accessed from the frontend. If the user is not logged in as an admin, the admin pages are not accessable.
+Product management and messages from users can be accessed from the front end. If the user is not logged in as an admin, the admin pages are not accessible.
 
 ### Footer
-The footer is very simple with an adress and a link to the store's facebook bussiness page.
+The footer is very simple with an address and a link to the store's Facebook business page.
 
 ![footer image](misc/footer.PNG)
 
@@ -153,8 +153,7 @@ The footer is very simple with an adress and a link to the store's facebook buss
 - I would also make it s that the stock number is changed when an item is bought.
 
 ## Technologies and packages
-This is the content of the requirements file, which explains what needs to be installed in order to run the code. Some of the installed packages are not used, but were used in earlier versions.
-
+This is the content of the requirements file, which explains what needs to be installed to run the code. Some of the installed packages are not being used, but were used in earlier versions.
 ```
 asgiref==3.6.0
 boto3==1.26.45
@@ -378,7 +377,7 @@ For the static files I used AWS S3:
     - Add Statement.
     - Generate the Policy.
     - Copy the Policy JSON Document.
-    - Paste the policy into Edit Bucket policy on the previous tab.
+    - Paste the policy into the Edit Bucket policy on the previous tab.
     - Save the changes.
 - Go to ACL (Access Control List).
     - Choose List for everyone (public access).
@@ -386,7 +385,7 @@ For the static files I used AWS S3:
     - Save the changes.
 - AWS IAM (Identity and Access Management) setup.
     - From the IAM dashboard within AWS, select User Groups
-    - Create a group. Click through and Create Group.
+    - Create a group. Click through and Create a Group.
 - Select Policies.
     - Create a policy.
     - Go to the JSON tab and click "Import managed policy".
@@ -403,13 +402,13 @@ For the static files I used AWS S3:
     - Choose a user name.
     - Select Programmatic access as the Access type.
     - Add the user to the Group just created.
-    - Create User.
+    - Create a User.
 - Download the .csv file containing the access key and secret access key.
     - The file can only be downloaded once.
 
 - Connecting Heroku to AWS S3
 
-Install boto3 and django-storages by typing these commands in the terminal:
+Install boto3 and Django-storages by typing these commands in the terminal:
 ```
 pip3 install boto3
 pip3 install django-storages
@@ -426,13 +425,13 @@ pip3 freeze > requirements.txt
 
 ## Credits
 ### Code
-A lot of the backend code is based on the [boutique ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from the Code Institute fullstack developer course. The code is adapted to fit my project.
+A lot of the backend code is based on the [boutique ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from the Code Institute full stack developer course. The code is adapted to fit my project.
 
-For the frontend I used the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). It is used for the navbar and footer, as well as for the product cards.
+For the front end, I used the [Shop Homepage](https://startbootstrap.com/template/shop-homepage) from [Start Bootstrap](https://startbootstrap.com). It is used for the navbar and footer, as well as for the product cards.
 
 Some of the code is based on the code snippets provided in the [bootstrap](), and [django]() documentation.
 
 ### Content and Media
-When writing the README.md, i used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site](https://book-store-ci.herokuapp.com/) on each book's product page. The publisher can be seen on the covers. The description for the books are from [goodreads](https://www.goodreads.com/), [wikipedia](wikipedia.com) or [bokus](https://www.bokus.com/).
+When writing the README.md, I used my mentor Harry Dhillon's [Nourish and Lift project](https://github.com/Harry-Leepz/Nourish-and-Lift) as a guide. All pictures on the website are taken by me, and information about who wrote and published the book can be found on the [live site](https://book-store-ci.herokuapp.com/) on each book's product page. The publisher can be seen on the covers. The description for the books are from [goodreads](https://www.goodreads.com/), [wikipedia](wikipedia.com) or [bokus](https://www.bokus.com/).
 
 Erik Vodopivec Forsman, 2023
