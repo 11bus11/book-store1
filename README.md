@@ -243,6 +243,11 @@ The website was natively tested on these devices:
 The website was also tested on these devices thru Mozilla Dev Tools:
 - iPad
 - iPhone SE (2nd generation)
+- Galaxy S20
+- Galaxy Note 20 Ultra
+- iPhone 11 pro
+- Galaxy S10/S10+
+- iPhone 12/13 Pro Max
 
 ### Browser Testing
 The website was tested on these browsers:
@@ -291,7 +296,8 @@ I used pycodestyles in the gitpod editor in order to find errors in my python fi
 - When I wrote the link to the product_details of the bag items, I could not get the product id to work. After a while i realised that i had been referencing the wrong id. Had similar problems later in the project too.
 
 #### Unfixed bugs
-- If there is an image url, which does not work, the website will not show the substitution image. This is because the if-statememt only checks if there is an image url, not if it acctually works. the reason for this bug existing is time constraints. I prioritised larger issues before this. 
+- If there is an image url, which does not work, the website will not show the substitution image. This is because the if-statememt only checks if there is an image url, not if it acctually works. the reason for this bug existing is time constraints. I prioritised larger issues before this.
+- On mobile, part of the product choice input field (rreviews) is out of frame. I did not have the time to solved this, and the form is functional. 
 
 ### Deployment
 This project was deployed with Heroku.
