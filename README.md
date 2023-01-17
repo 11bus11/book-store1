@@ -297,6 +297,7 @@ I used pycodestyles in the gitpod editor in order to find errors in my python fi
 #### Unfixed bugs
 - If there is an image url, which does not work, the website will not show the substitution image. This is because the if-statememt only checks if there is an image url, not if it acctually works. the reason for this bug existing is time constraints. I prioritised larger issues before this.
 - On mobile, part of the product choice input field (rreviews) is out of frame. I did not have the time to solved this, and the form is functional. 
+- Only the image_place field is currently working for adding images. I did not have enough time to get image_url and image to work with aws.
 
 ### Deployment
 This project was deployed with Heroku.
