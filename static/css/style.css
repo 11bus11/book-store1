@@ -6,15 +6,7 @@
     --istok-web-font: 'Istok Web', sans-serif;
 }
 
-form {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
-
-.stripe-style-input {
-    max-width: 100%;
-}
-
+/* grid elements */
 nav {
     background-color: var(--light-green);
     width: 100vw;
@@ -37,7 +29,7 @@ footer {
     margin-left: 0;
 }
 
-
+/* remove item - bag */
 .remove-item {
     cursor: pointer;
 }
@@ -58,7 +50,7 @@ footer {
     height: 2px;
 }
 
-
+/* Input */
 .StripeElement,
 .stripe-style-input, 
 #profie-update-form,
@@ -75,6 +67,16 @@ input {
   transition: box-shadow 150ms ease;
 }
 
+form {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.stripe-style-input {
+    max-width: 100%;
+}
+
+/* images */
 img {
     width: 100%;
     height: auto;
